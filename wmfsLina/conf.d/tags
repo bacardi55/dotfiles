@@ -1,0 +1,130 @@
+[tags]
+    [default_tag]
+        name = "Tag"
+        mwfact = 0.4
+        nmaster = 1
+        layout = "tile_grid_vertical"
+        resizehint = false
+        infobar_position = "top"
+    [/default_tag]
+
+    tag_round   = true
+    occupied_bg = "#3f3f3f"
+    sel_fg      = "#3f3f3f"
+    sel_bg      = "#d4d4d4"
+    autohide    = false
+    name_count = true
+
+    # Border around the tag buttons.
+    border = false
+
+    # Mouse buttons action on tag.
+    mouse_button_tag_sel       = "1" #selection du tag : clic gauche
+    mouse_button_tag_transfert = "2" #transfert client to tag : clic milieu
+    mouse_button_tag_add       = "3" # Fusionner avec ce tag : bouton droit
+    mouse_button_tag_next      = "4" # aller sur le prochain tag : roulette vers le haut
+    mouse_button_tag_prev      = "5" # aller sur le précédent tag : roulette vers le bas
+
+    # Screen 1
+    [tag] name = "    \i[11;0;20;20;/home/rkhaiat/.config/wmfs/images/firefox.png]\    " layout = "tile_top" mwfact = 0.35 nmaster = 1 [/tag]
+    [tag] name = "    \i[11;0;20;20;/home/rkhaiat/.config/wmfs/images/vim.png]\    " layout = "tile_grid" [/tag]
+    #[tag] name = "    \i[11;0;20;20;/home/rkhaiat/.config/wmfs/images/folder.png]\    " layout = "tile_grid" [/tag]
+    [tag] name = "    \i[11;0;20;20;/home/rkhaiat/.config/wmfs/images/email.png]\    " layout = "tile_grid" [/tag]
+    [tag]
+        name             = "    \i[10;0;20;20;/home/rkhaiat/.config/wmfs/images/irssi.png]\    "
+        mwfact           = 0.35
+        nmaster          = 2
+        layout           = "tile_grid"
+        resizehint       = false
+        infobar_position = "top"
+    [/tag]
+
+    [tag] name = "5" layout = "tile_grid" [/tag]
+    [tag] name = "6" layout = "tile_grid" [/tag]
+    [tag] name = "7" layout = "tile_grid" [/tag]
+    [tag] name = "8" layout = "tile_grid" [/tag]
+    [tag] name = "9" layout = "tile_grid" [/tag]
+    #[tag] name = "misc" layout = "tile_grid" [/tag]
+    #[tag] name = "misc2" layout = "tile_grid" [/tag]
+
+    # screen 2 (s'affiche sur le 1 s'il n'y en a qu'un)
+        
+#        [default_tag]
+#             name              = "Tag"
+#             mwfact            = 0.4
+#             nmaster           = 1
+#             layout            = "tile_grid_vertical"
+#             resizehint        = false
+#             infobar_position = "top"
+#        [/default_tag]
+#
+#        tag_round      = true
+#        occupied_bg    = "#3f3f3f"
+#        sel_fg         = "#3f3f3f"
+#        sel_bg         = "#D4D4D4"
+#        autohide       = false
+#        name_count     = true
+#        #default_name   = "Tag"
+#        #default_layout = "tile_grid_vertical"
+#
+#        # Border around the tag buttons.
+#        border = false
+#
+#        # Mouse buttons action on tag.
+#        mouse_button_tag_sel       = "1" # selection du tag : clic gauche
+#        mouse_button_tag_transfert = "2" # transfert client to tag : clic milieu
+#        # fusion des tags :
+#        mouse_button_tag_add       = "3" # Fusionner avec ce tag : bouton droit
+#        mouse_button_tag_next      = "4" # aller sur le prochain tag : roulette vers le haut
+#        mouse_button_tag_prev      = "5" # aller sur le précédent tag : roulette vers le bas
+#
+#        # Screen 1
+#        [tag]
+#            name             = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/irssi.png]\    "
+#            screen           = 1
+#            mwfact           = 0.20
+#            nmaster          = 1
+#            layout           = "tile_left"
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+#
+#        [tag] 
+#            name   = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/mplayer.png]\    " 
+#            layout = "tile_grid_vertical"
+#            screen = 1 
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+#        [tag] 
+#            name   = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/torrent.jpg]\    " 
+#            screen = 1 
+#            layout = "tile_grid_vertical" 
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+#
+#        # Screen 2
+#        [tag] 
+#            name   = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/firefox.png]\    " 
+#            screen = 0 layout = "tile_top" 
+#            mwfact = 0.35 
+#            nmaster = 1 
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+#        [tag] 
+#            name   = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/vim.png]\    " 
+#            layout = "tile_grid_vertical" 
+#            screen = 0 
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+#        [tag] 
+#            name   = "    \i[10;0;20;20;/home/bacardi55/.config/wmfs/images/email.png]\    " 
+#            layout = "tile_grid_vertical" 
+#            screen = 0 
+#            resizehint       = false
+#            infobar_position = "top"
+#        [/tag]
+[/tags]

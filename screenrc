@@ -1,0 +1,19 @@
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %c"
+vbell off
+
+#-*-conf-*-
+#
+startup_message off
+autodetach      on
+vbell           on
+
+setenv LC_CTYPE fr_FR.UTF-8
+defutf8 on
+
+termcapinfo rxvt-unicode ti@:te@
+terminfo    rxvt-unicode ti@:te@:
+term        screen-256color
+hardstatus on
+hardstatus alwayslastline '%{= M} %H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
+
+idle 420 eval "screen cmatrix -f -o -u 10" "idle 0"

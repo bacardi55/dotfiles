@@ -1,0 +1,5 @@
+#!/bin/sh
+urxvtd -q -f -o & 
+
+exec ck-launch-session /usr/local/bin/wmfs
+#exec ck-launch-session gnome-session

@@ -1,0 +1,3 @@
+text/html; links %s; nametemplate=%s.html
+text/html; links -dump %s; nametemplate=%s.html; copiousoutput
+text/*; less
