@@ -1,33 +1,66 @@
 [rules]
-    # Auto free Mplayer
-    [rule]
-        class    = "MPlayer"  # First part of WM_CLASS
-        instance = "xv"       # Seconf part of WM_CLASS, not needed if first part is correct
-        #role     = ""           # WM_WINDOW_ROLE (will be implemented)
-        #screen   = 1          # Screen to use
-        #tag      = 2          # Tag number of apps
-        free     = true       # Set automatic free client
-        max      = false      # Set automatic maximized client
-    [/rule]
-    # Download box for Fx
-    [rule]
-        instance = "Download" # Seconf part of WM_CLASS, not needed if first part is correct
-        free     = true       # Set automatic free client
-    [/rule]
-    # Auto free pour gimp
-    [rule]
-        class    = "Gimp"  # First part of WM_CLASS
-        #instance = "Gimp"       # Seconf part of WM_CLASS, not needed if first part is correct
-        #role     = "           # WM_WINDOW_ROLE (will be implemented)
-        #screen   = 1          # Screen to use
-        #tag      = 2          # Tag number of apps
-        free     = true       # Set automatic free client
-#        max      = false       # Set automatic maximized client
-    [/rule]
-    # Chromium in tag 1 screen 1
-    [rule]
-        class     = "Chromium"
-        screen    = 0
-        tag       = 1
-    [/rule]
+  # Auto free Mplayer
+  [rule]
+    class    = "MPlayer"  # First part of WM_CLASS
+    instance = "xv"       # Seconf part of WM_CLASS, not needed if first part is correct
+    #role     = ""           # WM_WINDOW_ROLE (will be implemented)
+    #screen   = 1          # Screen to use
+    #tag      = 2          # Tag number of apps
+    free     = true       # Set automatic free client
+    max      = false      # Set automatic maximized client
+    ignoretags = true
+  [/rule]
+  
+# Download box for Fx
+  [rule]
+    instance = "Download" # Seconf part of WM_CLASS, not needed if first part is correct
+    free     = true       # Set automatic free client
+  [/rule]
+  
+# Firefox in tag 1 screen 1
+  [rule]
+    class     = "Firefox"
+    screen    = 0
+    tag       = 1
+  [/rule]
+
+# Pref box for Fx
+  [rule]
+    class    = "Firefox"
+    #instance = "Namaroka" # Seconf part of WM_CLASS, not needed if first part is correct
+    role     = "Preferences"
+    free     = true       # Set automatic free client
+    follow_client = true
+  [/rule]
+  
+# Write mail in TBird
+  [rule]
+    instance = "Msgcompose"
+    free     = true
+  [/rule]
+  
+# Auto free pour gimp
+  [rule]
+    class    = "Gimp"  # First part of WM_CLASS
+    #instance = "Gimp"       # Seconf part of WM_CLASS, not needed if first part is correct
+    #role     = "           # WM_WINDOW_ROLE (will be implemented)
+    #screen   = 1          # Screen to use
+    #tag      = 2          # Tag number of apps
+    free     = true       # Set automatic free client
+#   max      = false       # Set automatic maximized client
+  [/rule]
+  
+#    # Chromium in tag 1 screen 1
+#    [rule]
+#        class     = "Chromium"
+#        screen    = 0
+#        tag       = 1
+#    [/rule]
+    # thunderbird in tag 3 screen 1
+  
+  [rule]
+    class     = "Mail"
+    screen    = 0
+    tag       = 1
+  [/rule]
 [/rules]

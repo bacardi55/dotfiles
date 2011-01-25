@@ -1,22 +1,20 @@
 [client]
-        border_height        = 1
-        border_shadow        = true
-        border_normal        = "#3f3f3f"
-        border_focus         = "#D4D4D4"
-        resize_corner_normal = "#000000"
-        resize_corner_focus  = "#800000"
+  border_height        = 1
+  border_shadow        = false
+  border_normal        = "#1E2320"
+  border_focus         = "#D4D4D4"
+  resize_corner_normal = "#1E2320"
+  resize_corner_focus  = "#D4D4D4"
+  client_auto_center   = true
 
-        modifier = "Alt"
+  modifier = "Alt"
 
-        #autofree = "gimp|MPlayer|Download"
-        #automax = ""
+  [mouse] button = "1" func = "client_raise" [/mouse]
+  [mouse] button = "1" func = "mouse_move"   [/mouse]
+  [mouse] button = "3" func = "client_raise" [/mouse]
+  [mouse] button = "3" func = "mouse_resize" [/mouse]
 
-        [mouse] button = "1" func = "client_raise" [/mouse]
-        [mouse] button = "1" func = "mouse_move"   [/mouse]
-        [mouse] button = "3" func = "client_raise" [/mouse]
-        [mouse] button = "3" func = "mouse_resize" [/mouse]
-
-        # Remove this section to delete the titlebar.
+  # Remove this section to delete the titlebar.
 #        [titlebar]
 #                stipple   = true
 #                height    = 12

@@ -1,47 +1,46 @@
 [layouts]
-        fg = "#555555"
-        bg = "#3f3f3f"
+  fg = "#1E2320"
+  bg = "#1E2320"
 
-        # keep position of clients when switching to free layout
-        keep_layout_geo = true
+  # keep position of clients when switching to free layout
+  keep_layout_geo = true
 
-        # Border around the layout button.
-        border = false
+  # Border around the layout button.
+  border = false
 
-        # Value menu or switch.
-        system = "menu"
+  # Value menu or switch.
+  system = "menu"
 
-        selected_layout_symbol = "¤"
+  selected_layout_symbol = "→"
 
-        # Tiling layouts.
+  # Tiling layouts.
 #        [layout] type = "tile_right"        symbol = "RIGHT"    [/layout]
 #        [layout] type = "tile_bottom"       symbol = "BOTTOM"   [/layout]
 #        [layout] type = "mirror_horizontal" symbol = "MIRROR_H" [/layout]
 #        [layout] type   = "layer" symbol = "MAN" [/layout]
 
-        [layout] 
-            type   = "tile_left" 
-            symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tl.png]\ "
-        [/layout]
-        [layout] 
-            type   = "tile_top" 
-            symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tt.png]\ "      
-        [/layout]
-        [layout] 
-            type   = "tile_grid_vertical" 
-            symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tg.png]\ "     
-        [/layout]
-        [layout] 
-            type   = "mirror_vertical" 
-            symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/mv.png]\ " 
-        [/layout]
-        [layout] 
-            type   = "max" 
-            symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/max.png]\ " 
-        [/layout]
-        [layout] 
-            type   = "free" 
-            symbol = "FREE" 
-        [/layout]
-
+  [layout] 
+    type   = "tile_left" 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tl.png]\ "
+  [/layout]
+  [layout] 
+    type   = "tile_top" 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tt.png]\ "      
+  [/layout]
+  [layout] 
+    type   = "tile_grid_vertical" 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tg.png]\ "     
+  [/layout]
+  [layout] 
+    type   = "mirror_vertical" 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/mv.png]\ " 
+  [/layout]
+  [layout] 
+    type   = "max" 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/max.png]\ " 
+  [/layout]
+  [layout] 
+    type   = "free" 
+    symbol = "FREE" 
+  [/layout]
 [/layouts]

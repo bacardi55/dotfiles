@@ -1,35 +1,35 @@
 [menu]
-        # Default menu, binded on the root window, button 3.
-        [set_menu]
-                name = "rootmenu"
-
-                # place_at_mouse = false
-                # x = 40 y = 50
-
-                fg_focus  = "#000000" bg_focus  = "#900000"
-                fg_normal = "#900000" bg_normal = "#000000"
-
-                [item] name = "Terminal"        func = "spawn" cmd = "urxvt" [/item]
-                [item] name = "Chromium"        func = "spawn" cmd = "chromium" [/item]
-                [item] name = "Firefox"         func = "spawn" cmd = "firefox" [/item]
-                [item] name = "Fichier"         func = "spawn" cmd = "nautilus --no-desktop" [/item]
-                [item] name = "Next tag"        func = "tag_next"                  [/item]
-                [item] name = "Previous tag"    func = "tag_prev"                  [/item]
-                [item] name = "Next layout"     func = "layout_next"               [/item]
-                [item] name = "Previous layout" func = "layout_prev"               [/item]
-                [item] name = "Toggle infobar"  func = "toggle_infobar_position"   [/item]
-                [item] name = "Reload WMFS"     func = "reload"                    [/item]
-                [item] name = "Quit WMFS"       func = "quit"                      [/item]
-        [/set_menu]
-
-        [set_menu]
-                name = "clientmenu"
-
-                fg_focus  = "#000000" bg_focus  = "#900000"
-                fg_normal = "#900000" bg_normal = "#000000"
-
-                [item] name = "Close"    func = "client_kill" [/item]
-                [item] name = "Maximize" func = "toggle_max"  [/item]
-                [item] name = "Free"     func = "toggle_free" [/item]
-        [/set_menu]
+  # Default menu, binded on the root window, button 3.
+#  [set_menu]
+#    name = "rootmenu"
+#
+#    # place_at_mouse = false
+#    # x = 40 y = 50
+#
+#    fg_focus  = "#000000" bg_focus  = "#900000"
+#    fg_normal = "#900000" bg_normal = "#000000"
+#
+#    [item] name = "Terminal"        func = "spawn" cmd = "urxvt" [/item]
+#    [item] name = "Chromium"        func = "spawn" cmd = "chromium" [/item]
+#    [item] name = "Firefox"         func = "spawn" cmd = "firefox" [/item]
+#    [item] name = "Fichier"         func = "spawn" cmd = "nautilus --no-desktop" [/item]
+#    [item] name = "Next tag"        func = "tag_next"                  [/item]
+#    [item] name = "Previous tag"    func = "tag_prev"                  [/item]
+#    [item] name = "Next layout"     func = "layout_next"               [/item]
+#    [item] name = "Previous layout" func = "layout_prev"               [/item]
+#    [item] name = "Toggle infobar"  func = "toggle_infobar_position"   [/item]
+#    [item] name = "Reload WMFS"     func = "reload"                    [/item]
+#    [item] name = "Quit WMFS"       func = "quit"                      [/item]
+#  [/set_menu]
+#
+#  [set_menu]
+#    name = "clientmenu"
+#
+#    fg_focus  = "#000000" bg_focus  = "#900000"
+#    fg_normal = "#900000" bg_normal = "#000000"
+#
+#    [item] name = "Close"    func = "client_kill" [/item]
+#    [item] name = "Maximize" func = "toggle_max"  [/item]
+#    [item] name = "Free"     func = "toggle_free" [/item]
+#  [/set_menu]
 [/menu]

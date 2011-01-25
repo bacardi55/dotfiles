@@ -5,6 +5,7 @@
         # Open a terminal.
         [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
         [key] mod = {"Super"} key = "r" func = "spawn" cmd = "urxvtc" [/key]
+        [key] mod = {"Alt"} key = "Return" func = "spawn" cmd = "urxvtc" [/key]
 
         # Kill the selected client.
         [key] mod = {"Alt"} key = "q" func = "client_kill" [/key]
@@ -52,10 +53,14 @@
 
         #shortcut
         #[key] mod = {"Super"} key = "e" func = "spawn" cmd = "nautilus --no-desktop" [/key]
-        [key] mod = {"Super"} key = "l" func = "spawn" cmd = "slock" [/key]
-        [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mocp -G" [/key]
+        [key] mod = {"Control", "Alt"} key = "l" func = "spawn" cmd = "slock" [/key]
         [key] mod = {"Super"} key = "f" func = "spawn" cmd = "firefox" [/key]
+        [key] mod = {"Super"} key = "t" func = "spawn" cmd = "thunderbird" [/key]
         [key] mod = {"Super"} key = "c" func = "spawn" cmd = "chromium" [/key]
+        [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mocp -G" [/key]
+        [key] mod = {""} key = "XF86AudioPlay" func = "spawn" cmd = "mocp -G" [/key]
+        [key] mod = {""} key = "XF86AudioNext" func = "spawn" cmd = "mocp -f" [/key]
+        [key] mod = {""} key = "XF86AudioPrev" func = "spawn" cmd = "mocp -r" [/key]
 
         # Select the next/previous tag.
         [key] mod = {"Super"} key = "Right" func = "tag_next" [/key]
@@ -75,6 +80,14 @@
         [key] mod = {"Super"} key = "egrave" func = "tag" cmd = "7" [/key]
         [key] mod = {"Super"} key = "underscore" func = "tag" cmd = "8" [/key]
         [key] mod = {"Super"} key = "ccedilla" func = "tag" cmd = "9" [/key]
+
+        # go to prev tag
+        [key] mod = {"Super"} key = "twosuperior" func = "tag_prev_sel" [/key]
+        # go to last tag
+        [key] mod = {"Super"} key = "Escape" func = "tag_last" [/key]
+        # Stay last tag
+        [key] mod = {"Super", "Shift"} key = "Escape" func = "tag_stay_last" [/key]
+
 
         # change screen
         [key] mod = {"Super"} key = "Tab" func = "screen_next" [/key]
@@ -137,12 +150,6 @@
         [key] mod = {"Control", "Super"} key = "Left" func = "tag_transfert_prev" [/key]
         [key] mod = {"Control", "Super"} key = "Left" func = "tag_prev" [/key]
 
-        # layout manuelle
-        [key] mod = { "Super" } key = "h" func = "set_layer" cmd = "1" [/key]
-        [key] mod = { "Super" } key = "l" func = "set_layer" cmd = "-1" [/key]
-        [key] mod = { "Super" } key = "k" func = "set_client_layer" cmd = "1"[/key]
-        [key] mod = { "Super" } key = "j" func = "set_client_layer" cmd = "-1"[/key]
-
         # selbar menu
         [key] mod = {"Control"} key = "space" func = "clientlist" [/key]
 
@@ -161,7 +168,7 @@
         [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "tag_rename" [/key]
 
         # Toggle the tag_autohide mode
-        [key] mod = {"Super"} key = "h" func = "toggle_tagautohide" [/key]
+        [key] mod = {"Alt"} key = "h" func = "toggle_tagautohide" [/key]
 
         # Toggle ignore client (print a client in all tag)
         [key] mod = {"Super"} key = "i" func = "client_ignore_tag" [/key]
