@@ -1,14 +1,17 @@
-!{{{ XFT
-Xft.dpi:       96
-Xft.antialias: 1
-Xft.hinting:   1
-Xft.hintstyle: hintfull
-Xft.rgba:      rgb
-!}}}
+! ---------------------------------------------------
+! file:     ~/.Xdefaults                           
+! author:   jason ryan - http://jasonwryan.com/    
+! vim:fenc=utf-8:nu:ai:si:et:ts=4:sw=4:ft=xdefaults:
+! ---------------------------------------------------
 
-!{{{ URXVT
-!
-! General
+! -- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  1
+Xft.rgba:       rgb
+Xft.hinting:    1
+Xft.hinstyle:   hintfull
+
+! Urxvt
 urxvt*termName:  rxvt-256color
 urxvt*loginShell:         true
 urxvt*scrollBar:         false
@@ -16,55 +19,86 @@ urxvt*secondaryScroll:    true
 urxvt*saveLines:         65535
 urxvt*cursorBlink:       false
 urxvt*urgentOnBell:       true
-!urxvt*override-redirect:false
-!urxvt*borderLess:       false
-!urxvt*internalBorder:       0
-!urxvt*externalBorder:       0
-!
-! Extensions
+
+URxvt.buffered: true
+URxvt.background: #121212
+URxvt.foreground: #999999
+URxvt.cursorColor: #5E468C
+URxvt.geometry: 80x22
+URxvt.transparent: 0
+
+
+! teh transparency stuff
+URxvt*inheritPixmap: false
+URxvt*tintColor: #080808
+URxvt*shading: 0
+
+! -- Fonts -- !
+URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12:antialias=true
+
+
+! -- Colours -- !
+!!black
+! *color0:  #333333
+! *color8:  #3D3D3D
+!!red
+! *color1:  #8C4665
+! *color9:  #BF4D80
+!!green
+! *color2:  #287373
+! *color10: #53A6A6
+!!yellow
+! *color3:  #905288
+! *color11: #A270A3
+!!blue
+! *color4:  #395573
+! *color12: #477AB3
+!!magenta
+! *color5:  #5E468C
+! *color13: #7E62B3
+!!cyan
+! *color6:  #31658C
+! *color14: #6096BF
+!!white
+! *color7:  #899CA1
+! *color15: #C0C0C0
+
+
+
+! Zenburn -----
+*foreground: #dcdccc
+
+!black
+*color0: #3F3F3F
+*color0: #1E2320
+*color8: #709080
+!red
+*color1: #705050
+*color9: #DCA3A3
+!green
+*color2: #60B48A
+*color10: #C3BF9F
+!yellow
+*color3: #DFAF8F
+*color11: #F0DFAF
+!blue
+*color4: #506070
+*color12: #94BFF3
+!magenta
+*color5: #DC8CC3
+*color13: #EC93D3
+!cyan
+*color6: #8CD0D3
+*color14: #93E0E3
+!white
+*color7: #DCDCCC
+*color15: #FFFFFF
+
+
+! -- Clickable urls -- !
 urxvt*perl-lib:        /usr/lib/urxvt/perl/
 urxvt*perl-ext-common: default,matcher,searchable-scrollback
 urxvt*urlLauncher:     firefox
 urxvt*matcher.button:  1
 ! Catch ugly URLs
 urxvt*cutchars:        '"'()*<>[]{|}
-!
-! Appearance
-urxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12:antialias=true
-!
-! Cursor
-urxvt*cursorColor: #DCDCCC
-!
-! Pseudo Transparency
-!urxvt*shading:    50
-!urxvt*transparent:true
-! 
-! Zenburn color-scheme
-urxvt*background:  #3f3f3f
-urxvt*foreground:  #dcdccc
-! black + red
-!urxvt*color0:     #3f3f3f
-urxvt*color0:      #1E2320
-urxvt*color1:      #705050
-! green + yellow
-urxvt*color2:      #60b48a
-urxvt*color3:      #dfaf8f
-! blue + purple
-urxvt*color4:      #506070
-urxvt*color5:      #dc8cc3
-! cyan + white
-urxvt*color6:      #8cd0d3
-urxvt*color7:      #dcdccc
-! bright-black + bright-red
-urxvt*color8:      #709080
-urxvt*color9:      #dca3a3
-! bright-green + bright-yellow
-urxvt*color10:     #c3bf9f
-urxvt*color11:     #f0dfaf
-! bright-blue + bright-purple
-urxvt*color12:     #94bff3
-urxvt*color13:     #ec93d3
-! bright-cyan + bright-white
-urxvt*color14:     #93e0e3
-urxvt*color15:     #ffffff
-!}}}
