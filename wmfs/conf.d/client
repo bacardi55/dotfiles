@@ -1,11 +1,12 @@
 [client]
   border_height        = 1
   border_shadow        = false
-  border_normal        = "#1E2320"
-  border_focus         = "#D4D4D4"
-  resize_corner_normal = "#1E2320"
-  resize_corner_focus  = "#D4D4D4"
+  border_normal        = "#3F3E3C"
+  border_focus         = "#5F5E5C"
+  resize_corner_normal = "#5F5E5C"
+  resize_corner_focus  = "#5F5E5C"
   client_auto_center   = true
+  set_new_win_master   = false
 
   modifier = "Alt"
 

@@ -10,12 +10,14 @@
 
   tag_round   = true
   tag_auto_prev = false
-  occupied_bg = "#000000"
-  occupied_fg = "#D4D4D4"
-  sel_fg      = "#F6F6F6"
-  sel_bg      = "#333333"
-  urgent_bg   = "#DD1111"
-  urgent_fg   = "#000000"
+
+  occupied_bg = "#323232"
+  occupied_fg = "#FFFFFF"
+  sel_fg      = "#FFFFFF"
+  sel_bg      = "#4A8720"
+  urgent_bg   = "#CC0000"
+  urgent_fg   = "#FFFFFF"
+
   autohide    = false
   name_count = true
 
@@ -30,15 +32,18 @@
   mouse_button_tag_prev      = "5" # aller sur le précédent tag : roulette vers le bas
 
   # Screen 1
-  [tag] name = "www" layout = "tile_top" mwfact = 0.35 nmaster = 1 [/tag]
-  [tag] name = "dev" layout = "tile_grid" [/tag]
-  [tag] name = "mail" layout = "tile_grid" [/tag]
-  [tag] name = "irssi" mwfact = 0.35 nmaster = 2 layout = "tile_grid" resizehint = true infobar_position = "top" [/tag]
+  [tag] name = "¹|www" layout = "tile_bottom" mwfact = 0.65 nmaster = 1 [/tag]
+  [tag] name = "²|dev" layout = "tile_grid" [/tag]
+  [tag] name = "³|mail" layout = "tile_grid" [/tag]
+  [tag] name = "4|im" mwfact = 0.80 nmaster = 1 layout = "tile_right" resizehint = true infobar_position = "none" [/tag]
   [tag] name = "5" layout = "tile_grid" [/tag]
   [tag] name = "6" layout = "tile_grid" [/tag]
   [tag] name = "7" layout = "tile_grid" [/tag]
   [tag] name = "8" layout = "tile_grid" [/tag]
-  [tag] name = "9" layout = "free" [/tag]
+  [tag] name = "9" layout = "tile_grid" [/tag]
+  [tag] name = "10" layout = "tile_grid" [/tag]
+  [tag] name = "11" layout = "tile_grid" [/tag]
+  [tag] name = "12" layout = "free" [/tag]
 
 
 # screen 2 (s'affiche sur le 1 s'il n'y en a qu'un)

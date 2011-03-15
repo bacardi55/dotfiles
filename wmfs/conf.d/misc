@@ -1,5 +1,5 @@
 [misc]
-  font               = "dejavu-9"
+  font               = "terminus-9"
   raisefocus         = true
   focus_follow_mouse = true
   status_timing      = 10

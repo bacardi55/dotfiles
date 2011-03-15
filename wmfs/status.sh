@@ -95,7 +95,7 @@ _battery() {
 	############
 	# battery state
 	#
-	bat_percent=$((`cat /sys/class/power_supply/BAT*/energy_now`/`cat /sys/class/power_supply/BAT*/energy_full | sed 's/00$//'`))
+	bat_percent=$((`cat /sys/class/power_supply/BAT*/charge_now`/`cat /sys/class/power_supply/BAT*/charge_full_design | sed 's/00$//'`))
 	bat_acpi=`cat /sys/class/power_supply/BAT*/status`
 	#
 	# use an arrow to show if battery is charging, discharging or full/AC

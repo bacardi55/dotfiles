@@ -1,6 +1,6 @@
 [layouts]
-  fg = "#1E2320"
-  bg = "#1E2320"
+  fg = "#D4D4D4"
+  bg = "#191919"
 
   # keep position of clients when switching to free layout
   keep_layout_geo = true
@@ -21,23 +21,31 @@
 
   [layout] 
     type   = "tile_left" 
-    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tl.png]\ "
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tl.png]\ "
   [/layout]
   [layout] 
-    type   = "tile_top" 
-    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tt.png]\ "      
+    type   = "tile_right" 
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tr.png]\ "
   [/layout]
+  [layout] 
+    type   = "tile_bottom" 
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tb.png]\ "
+  [/layout]
+#  [layout] 
+#    type   = "tile_top" 
+#    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tt.png]\ "      
+#  [/layout]
   [layout] 
     type   = "tile_grid_vertical" 
-    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tg.png]\ "     
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tg.png]\ "     
   [/layout]
   [layout] 
     type   = "mirror_vertical" 
-    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/mv.png]\ " 
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/mv.png]\ " 
   [/layout]
   [layout] 
     type   = "max" 
-    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/max.png]\ " 
+    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/max.png]\ " 
   [/layout]
   [layout] 
     type   = "free" 

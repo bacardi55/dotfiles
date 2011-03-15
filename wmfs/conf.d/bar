@@ -1,5 +1,5 @@
 [bar]
-  bg     = "#1E2320"
+  bg     = "#191919"
   fg     = "#D4D4D4"
   border = false
   [systray]

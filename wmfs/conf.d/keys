@@ -58,9 +58,9 @@
         [key] mod = {"Super"} key = "t" func = "spawn" cmd = "thunderbird" [/key]
         [key] mod = {"Super"} key = "c" func = "spawn" cmd = "chromium" [/key]
         [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mocp -G" [/key]
-        [key] mod = {""} key = "XF86AudioPlay" func = "spawn" cmd = "mocp -G" [/key]
-        [key] mod = {""} key = "XF86AudioNext" func = "spawn" cmd = "mocp -f" [/key]
-        [key] mod = {""} key = "XF86AudioPrev" func = "spawn" cmd = "mocp -r" [/key]
+        [key] mod = {""} key = "XF86AudioLowerVolume" func = "spawn" cmd = "amixer set Master playback 5-" [/key]
+        [key] mod = {""} key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer set Master playback 5+" [/key]
+#[key] mod = {""} key = "XF86AudioMute" func = "spawn" cmd = "" [/key]
 
         # Select the next/previous tag.
         [key] mod = {"Super"} key = "Right" func = "tag_next" [/key]
@@ -80,6 +80,9 @@
         [key] mod = {"Super"} key = "egrave" func = "tag" cmd = "7" [/key]
         [key] mod = {"Super"} key = "underscore" func = "tag" cmd = "8" [/key]
         [key] mod = {"Super"} key = "ccedilla" func = "tag" cmd = "9" [/key]
+        [key] mod = {"Super"} key = "agrave" func = "tag" cmd = "10" [/key]
+        [key] mod = {"Super"} key = "parenright" func = "tag" cmd = "11" [/key]
+        [key] mod = {"Super"} key = "equal" func = "tag" cmd = "12" [/key]
 
         # go to prev tag
         [key] mod = {"Super"} key = "twosuperior" func = "tag_prev_sel" [/key]
@@ -107,6 +110,9 @@
         [key] mod = {"Super", "Alt"} key = "egrave" func = "tag_transfert" cmd ="7" [/key]
         [key] mod = {"Super", "Alt"} key = "underscore" func = "tag_transfert" cmd ="8" [/key]
         [key] mod = {"Super", "Alt"} key = "ccedilla" func = "tag_transfert" cmd ="9" [/key]
+        [key] mod = {"Super", "Alt"} key = "agrave" func = "tag_transfert" cmd = "10" [/key]
+        [key] mod = {"Super", "Alt"} key = "parenright" func = "tag_transfert" cmd = "11" [/key]
+        [key] mod = {"Super", "Alt"} key = "equal" func = "tag_transfert" cmd = "12" [/key]
 
         # Move and follow
         [key] mod = {"Super", "Control"} key = "ampersand" func = "tag_transfert" cmd ="1" [/key]
@@ -127,6 +133,12 @@
         [key] mod = {"Super", "Control"} key = "underscore" func = "tag" cmd = "8" [/key]
         [key] mod = {"Super", "Control"} key = "ccedilla" func = "tag_transfert" cmd ="9" [/key]
         [key] mod = {"Super", "Control"} key = "ccedilla" func = "tag" cmd = "9" [/key]
+        [key] mod = {"Super", "Control"} key = "agrave" func = "tag_transfert" cmd ="10" [/key]
+        [key] mod = {"Super", "Control"} key = "agrave" func = "tag" cmd = "10" [/key]
+        [key] mod = {"Super", "Control"} key = "parentright" func = "tag_transfert" cmd ="11" [/key]
+        [key] mod = {"Super", "Control"} key = "parenright" func = "tag" cmd = "11" [/key]
+        [key] mod = {"Super", "Control"} key = "equal" func = "tag_transfert" cmd ="12" [/key]
+        [key] mod = {"Super", "Control"} key = "equal" func = "tag" cmd = "12" [/key]
 
         # Toggle additional tags (x) on the current tag
         # aka : combine tags ^^
@@ -139,6 +151,9 @@
         [key] mod = {"Control", "Shift"} key = "egrave" func = "tag_toggle_additional" cmd ="7" [/key]
         [key] mod = {"Control", "Shift"} key = "underscore" func = "tag_toggle_additional" cmd ="8" [/key]
         [key] mod = {"Control", "Shift"} key = "ccedilla" func = "tag_toggle_additional" cmd ="9" [/key]
+        [key] mod = {"Control", "Shift"} key = "agrave" func = "tag_toggle_additional" cmd ="10" [/key]
+        [key] mod = {"Control", "Shift"} key = "parenright" func = "tag_toggle_additional" cmd ="11" [/key]
+        [key] mod = {"Control", "Shift"} key = "equal" func = "tag_toggle_additional" cmd ="12" [/key]
 
         # Move to next/prev tag
         [key] mod = {"Alt", "Super"} key = "Right" func = "tag_transfert_next" [/key]
