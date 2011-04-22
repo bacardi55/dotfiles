@@ -2,13 +2,14 @@
   bg     = "#191919"
   fg     = "#D4D4D4"
   border = false
+
   [systray]
     # Enable/disable systray
     active = true
     # Screen of systray
     screen = 0
     # Spacing between tray icons
-    spacing = 3
+    spacing = 2
   [/systray]
 
   # Remove this section to disable the selbar.

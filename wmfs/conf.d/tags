@@ -21,6 +21,9 @@
   autohide    = false
   name_count = true
 
+  expose_name     = "EXPOSE"
+  expose_layout   = "tile_grid"
+  
   # Border around the tag buttons.
   border = false
 

@@ -5,8 +5,10 @@
   border_focus         = "#5F5E5C"
   resize_corner_normal = "#5F5E5C"
   resize_corner_focus  = "#5F5E5C"
+  
   client_auto_center   = true
   set_new_win_master   = false
+  client_tile_raise    = true
 
   modifier = "Alt"
 

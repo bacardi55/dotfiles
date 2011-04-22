@@ -230,7 +230,7 @@ statustext() {
 	############
 	# wmfs magic
 	#
-	wmfs -s 0 "$args"
+	wmfs -s "$args"
 	#
 	############
 }
