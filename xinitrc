@@ -1,7 +1,9 @@
 #!/bin/sh
 urxvtd -q -f -o & 
 
-xscreensaver -no-splash &
+wicd-gtk &
+volumeicon &
+keepassx & 
+parcellite &
 
-exec ck-launch-session /usr/local/bin/wmfs
-#exec ck-launch-session gnome-session
+exec ck-launch-session wmfs
