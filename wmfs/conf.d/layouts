@@ -21,31 +21,31 @@
 
   [layout] 
     type   = "tile_left" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tl.png]\ "
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tl.png]\ "
   [/layout]
   [layout] 
     type   = "tile_right" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tr.png]\ "
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tr.png]\ "
   [/layout]
   [layout] 
     type   = "tile_bottom" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tb.png]\ "
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tb.png]\ "
   [/layout]
 #  [layout] 
 #    type   = "tile_top" 
-#    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tt.png]\ "      
+#    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tt.png]\ "      
 #  [/layout]
   [layout] 
     type   = "tile_grid_vertical" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/tg.png]\ "     
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/tg.png]\ "     
   [/layout]
   [layout] 
     type   = "mirror_vertical" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/mv.png]\ " 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/mv.png]\ " 
   [/layout]
   [layout] 
     type   = "max" 
-    symbol = "       \i[13;4;15;13;/home/rkhaiat/.config/wmfs/images/layouts/max.png]\ " 
+    symbol = "       \i[13;4;15;13;/home/bacardi55/.config/wmfs/images/layouts/max.png]\ " 
   [/layout]
   [layout] 
     type   = "free" 

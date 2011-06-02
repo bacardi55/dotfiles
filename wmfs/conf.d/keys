@@ -188,7 +188,7 @@
         # Toggle ignore client (print a client in all tag)
         [key] mod = {"Super"} key = "i" func = "client_ignore_tag" [/key]
 
-        [key] mod = {""} key = "F9" func = "toggle_tag_expose" [/key]
+        [key] mod = {"Shift"} key = "F9" func = "toggle_tag_expose" [/key]
         
         [key] mod = {"Alt"} key = "t" func = "client_set_master" [/key]
 [/keys]

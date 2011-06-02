@@ -95,7 +95,7 @@ _battery() {
 	############
 	# battery state
 	#
-	bat_percent=$((`cat /sys/class/power_supply/BAT*/charge_now`/`cat /sys/class/power_supply/BAT*/charge_full_design | sed 's/00$//'`))
+	bat_percent=$((`cat /sys/class/power_supply/BAT*/energy_now`/`cat /sys/class/power_supply/BAT*/energy_full_design | sed 's/00$//'`))
 	bat_acpi=`cat /sys/class/power_supply/BAT*/status`
 	#
 	# use an arrow to show if battery is charging, discharging or full/AC
@@ -242,7 +242,7 @@ statustext() {
 # mpd network battery uptime volume date hour ompload
 #
 #statustext ompload mpd network battery date hour
-statustext mocp_author separateur battery separateur memory separateur date separateur hour
+statustext memory separateur date separateur hour
 #
 ############
 

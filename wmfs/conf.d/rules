@@ -8,7 +8,7 @@
     #tag      = 2          # Tag number of apps
     free     = true       # Set automatic free client
     max      = false      # Set automatic maximized client
-    ignoretags = true
+    ignoretags = false
   [/rule]
   
 # Download box for Fx
@@ -62,5 +62,11 @@
     class     = "Mail"
     screen    = 0
     tag       = 1
+  [/rule]
+
+  [rule]
+    class    = "xmessage"  # First part of WM_CLASS
+    instance = "Xmessage"       # Seconf part of WM_CLASS, not needed if first part is correct
+    free     = true       # Set automatic free client
   [/rule]
 [/rules]
