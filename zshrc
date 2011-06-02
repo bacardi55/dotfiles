@@ -45,20 +45,10 @@ alias less="most"
 alias df='df -h'
 alias du='du -hc'
 
-alias startx="sh /home/rkhaiat/script/start55"
-
 alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
-alias drupal_flush="cp sites/default/default.settings.php sites/default/settings.php && chmod 777 sites/default/settings.php"
-alias vpn_scpo="sudo vpnc script/vpn_scpo.conf"
-
-alias mount_portail_scpo="sshfs bacardi55@scpo:workspace/scpo /home/rkhaiat/workspace/sciences_po/portail"
-alias mount_2013_scpo="sshfs bacardi55@scpo:workspace/scpo2013 /home/rkhaiat/workspace/sciences_po/2013"
-alias mount_entrepreneur_scpo="sshfs bacardi55@scpo:workspace/scpoEntrepreneur /home/rkhaiat/workspace/sciences_po/entrepreneur"
 
 alias halt='sudo halt'
 alias reboot='sudo reboot'
-
-alias red="redshift -l '48.858083:2.294961' -t '6500:3600'"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups
