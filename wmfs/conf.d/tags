@@ -35,7 +35,7 @@
   mouse_button_tag_prev      = "5" # aller sur le précédent tag : roulette vers le bas
 
   # Screen 1
-  [tag] name = "¹|www" layout = "tile_bottom" mwfact = 0.65 nmaster = 1 [/tag]
+  [tag] name = "¹|www" layout = "tile_bottom" mwfact = 0.65 nmaster = 1 split = yes [/tag]
   [tag] name = "²|dev" layout = "tile_grid" [/tag]
   [tag] name = "³|mail" layout = "tile_grid" [/tag]
   [tag] name = "4|im" mwfact = 0.80 nmaster = 1 layout = "tile_right" resizehint = true infobar_position = "none" [/tag]

@@ -183,7 +183,7 @@
         [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "tag_rename" [/key]
 
         # Toggle the tag_autohide mode
-        [key] mod = {"Alt"} key = "h" func = "toggle_tagautohide" [/key]
+        [key] mod = {"Control"} key = "h" func = "toggle_tagautohide" [/key]
 
         # Toggle ignore client (print a client in all tag)
         [key] mod = {"Super"} key = "i" func = "client_ignore_tag" [/key]
@@ -192,13 +192,16 @@
         
         [key] mod = {"Alt"} key = "t" func = "client_set_master" [/key]
 
-        
+
+
+        # Toggle split mode
+        [key] mod = {"Alt"} key = "s" func = "split_toggle" [/key]
 
         # Swap next client with direction
-        [key] mod = {"Control"} key = "h" func = "client_swap_left"   [/key]
-        [key] mod = {"Control"} key = "l" func = "client_swap_right"  [/key]
-        [key] mod = {"Control"} key = "k" func = "client_swap_top"    [/key]
-        [key] mod = {"Control"} key = "j" func = "client_swap_bottom" [/key]
+        [key] mod = {"Alt"} key = "h" func = "client_swap_left"   [/key]
+        [key] mod = {"Alt"} key = "l" func = "client_swap_right"  [/key]
+        [key] mod = {"Alt"} key = "k" func = "client_swap_top"    [/key]
+        [key] mod = {"Alt"} key = "j" func = "client_swap_bottom" [/key]
 
         # Move next splitted client with direction
         [key] mod = {"Super", "Shift"} key = "h" func = "split_move_left"   [/key]
@@ -211,9 +214,13 @@
         [key] mod = {"Super"} key = "l" func = "client_resize_left"  cmd = "-20" [/key]
         [key] mod = {"Super"} key = "k" func = "client_resize_top"   cmd = "-20" [/key]
         [key] mod = {"Super"} key = "j" func = "client_resize_top"   cmd = "20"  [/key]
-        [key] mod = { "Super", "Control"} key = "h" func = "client_resize_right"  cmd = "20" [/key]
+        [key] mod = { "Super", "Control"} key = "h" func = "client_resize_right"  cmd = "20"  [/key]
         [key] mod = { "Super", "Control"} key = "l" func = "client_resize_right"  cmd = "-20" [/key]
         [key] mod = { "Super", "Control"} key = "k" func = "client_resize_bottom" cmd = "-20" [/key]
-        [key] mod = { "Super", "Control"} key = "j" func = "client_resize_bottom" cmd = "20" [/key]
+        [key] mod = { "Super", "Control"} key = "j" func = "client_resize_bottom" cmd = "20"  [/key]
 
+        [key] mod = {"Alt", "Super"} key = "l" func = "split_move_right"  [/key]
+        [key] mod = {"Alt", "Super"} key = "h" func = "split_move_left"   [/key]
+        [key] mod = {"Alt", "Super"} key = "k" func = "split_move_bottom" [/key]
+        [key] mod = {"Alt", "Super"} key = "j" func = "split_move_top"    [/key]
 [/keys]
