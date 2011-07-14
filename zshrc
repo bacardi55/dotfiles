@@ -8,6 +8,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+PATH=/home/bacardi55/script/:$PATH;
 
 # Prompt
 PS1="[%n@%M %~]%# "
