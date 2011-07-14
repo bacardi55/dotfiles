@@ -2,7 +2,7 @@
   border_height        = 1
   border_shadow        = false
   border_normal        = "#3F3E3C"
-  border_focus         = "#5F5E5C"
+  border_focus         = "#4A8720"
   resize_corner_normal = "#5F5E5C"
   resize_corner_focus  = "#5F5E5C"
   

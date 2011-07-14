@@ -54,6 +54,7 @@
         #shortcut
         #[key] mod = {"Super"} key = "e" func = "spawn" cmd = "nautilus --no-desktop" [/key]
         [key] mod = {"Control", "Alt"} key = "l" func = "spawn" cmd = "slock" [/key]
+        [key] mod = {""} key = "Pause" func = "spawn" cmd = "slock" [/key]
         [key] mod = {"Super"} key = "f" func = "spawn" cmd = "firefox" [/key]
         [key] mod = {"Super"} key = "t" func = "spawn" cmd = "thunderbird" [/key]
         [key] mod = {"Super"} key = "c" func = "spawn" cmd = "chromium" [/key]
