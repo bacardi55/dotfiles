@@ -6,6 +6,9 @@ volumeicon &
 keepassx & 
 parcellite &
 cherrytree &
+sh ~/.fehbg &
+mocp -S &
 trayfreq &
+ptbatterysystemtray &
 
 exec ck-launch-session wmfs
