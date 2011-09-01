@@ -10,5 +10,8 @@ sh ~/.fehbg &
 mocp -S &
 trayfreq &
 ptbatterysystemtray &
+twmnd &
+
+sh ~/.config/wmfs/status.sh &
 
 exec ck-launch-session wmfs
