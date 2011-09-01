@@ -2,6 +2,4 @@
   font               = "terminus-9"
   raisefocus         = true
   focus_follow_mouse = false
-  status_timing      = 10
-  # status_path
 [/misc]

@@ -222,6 +222,7 @@ statustext() {
 	############
 	# concatenate arguments
 	#
+  args=""
 	for arg in $@; do
 		_${arg}
 		args="${args}  `eval echo '$'$arg`"
@@ -242,7 +243,8 @@ statustext() {
 # mpd network battery uptime volume date hour ompload
 #
 #statustext ompload mpd network battery date hour
-statustext memory separateur date separateur hour
+#statustext memory separateur date separateur hour
+while true; do statustext memory separateur date separateur hour; sleep 10; done
 #
 ############
 

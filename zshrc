@@ -42,11 +42,12 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias top="htop"
 alias more="most"
-alias less="most"
+#alias less="most"
 alias df='df -h'
 alias du='du -hc'
 
 alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
+alias sshg="ssh -t sshgate@gate.par.lng"
 
 alias halt='sudo halt'
 alias reboot='sudo reboot'
@@ -130,4 +131,7 @@ alias pacman="pacman-color"
 cczeLess() {ccze -A < $1 | less -R;}
 cczeTail() {tail -f $1 | ccze -A;}
 
-grepScpo() {grep -rin --exclude-dir="*svn*" $1 ./}
+grepSvn() {grep -rin --exclude-dir="*svn*" $1 ./}
+
+
+fortune
