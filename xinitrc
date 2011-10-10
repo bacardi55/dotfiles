@@ -4,14 +4,16 @@ urxvtd -q -f -o &
 wicd-gtk &
 volumeicon &
 keepassx & 
-parcellite &
+#parcellite &
 cherrytree &
 sh ~/.fehbg &
-mocp -S &
+#mocp -S &
 trayfreq &
-ptbatterysystemtray &
+#ptbatterysystemtray &
+unclutter &
 twmnd &
 
-sh ~/.config/wmfs/status.sh &
+#sh ~/.config/wmfs/status.sh &
 
-exec ck-launch-session wmfs
+exec ck-launch-session i3
+#exec ck-launch-session wmfs
