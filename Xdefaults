@@ -102,3 +102,30 @@ urxvt*urlLauncher:     firefox
 urxvt*matcher.button:  1
 ! Catch ugly URLs
 urxvt*cutchars:        '"'()*<>[]{|}
+
+
+!-- xterm
+xterm*background:       black
+xterm*boldFont:         vtbold
+xterm*border:           pink
+xterm*cursorColor:      yellow
+xterm*foreground:       yellow
+xterm*internalBorder:   2
+xterm*jumpScroll:       on
+xterm*mouse:            yellow
+xterm*reverse*Wrap:     on
+xterm.ReverseWrap:      on
+xterm*saveLines:        2000
+xterm*scrollBar:        on
+xterm*titlebar:         on
+xterm*visualBell:       on
+xterm.ActiveIcon:       on
+xterm.AllowIconInput:   on
+xterm.AutoRaise:        on
+xterm.Background:       black
+xterm.Border:           blue
+xterm.BorderWidth:      3
+xterm.Cursor:           green
+xterm.Foreground:       yellow
+xterm.InternalBorder:   2
+xterm.TextUnderIcon:    on
