@@ -172,6 +172,7 @@ mode "resize" {
 bindsym $mod+F1 [title="^mutt"] focus
 bindsym $mod+F2 [title="irssi"] focus
 bindsym $mod+w [class="(?i)Firefox"] focus
+bindsym $mod+t [class="(?i)Thunderbird"] focus
 
 # assign
 assign [class="Navigator"] → 1
