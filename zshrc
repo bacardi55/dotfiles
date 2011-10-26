@@ -17,9 +17,9 @@ RPS1="%{"$'\033[01;34m'"%}(%T)%{"$'\033[00m'"%}"
 # environment
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER="chromium"
+export BROWSER="firefox"
 export PAGER="most"
-export XTERM="urxvt"
+export XTERM="urxvtc"
 
 # Alias
 alias l='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
@@ -46,11 +46,19 @@ alias more="most"
 alias df='df -h'
 alias du='du -hc'
 
-alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
-alias sshg="ssh -t sshgate@gate.par.lng"
+# taskwarrior alias
+alias task_perso="c && task project!=ctb && task summary project!=ctb"
+alias task_boulot="c && task project:ctb && task summary project:ctb"
 
+# sudo alias
 alias halt='sudo halt'
 alias reboot='sudo reboot'
+
+# dev alias
+alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
+
+# ssh gate alias
+alias sshg="ssh -t sshgate@gate.par.lng"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups

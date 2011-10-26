@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+
+rsync -pavz --progress --stats /home/bacardi55/linagora kim:/home/bacardi55/linagora/ > /tmp/sortie_backup
+cat /tmp/sortie_backup | mail -s "Backup repertoire linagora" raphael@khaiat.org

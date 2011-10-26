@@ -1,0 +1,59 @@
+#!/bin/bash
+
+echo "You need yaourt to continue"
+
+echo "updating software"
+sudo pacman -Syu --noconfirm
+
+echo "installing software"
+sudo yaourt -S ack acpid alsa-utils artwiz-fonts aspell-fr autoconf automake bashmount batterysystemtray-git calcurse cheese cherrytree chromium cmake cmus codecs cryptsetup cups epdfview evince fakeroot feh ffmpeg firefox firefox-i18n-fr firebrand flashplugin-prerelease font-bh-ttf font-bitstream-speedo ganttproject gimp git gpicview gtk-chtheme gtk-engine-murrine gtk-engines gvim hacker-top-git hal htop keepassx less libreoffice libreoffice-fr lm_sensors logrotate make mcrypt mlocate moc most mplayer musepack-tools mutt-sidebar mysql ntp pacman-color parcellite patch pcmanfm php-apache php-apc php-intl php-mcrypt phpmyadmin php-pear php-sqlite pkg-config powertop pyinotify qemu-kvm ranger rsync rxvt-unicode screen scrot slock sshfs subversion sudo syslog-ng tango-icon-theme thunderbird-i18n-fr thunderbrand tmux trayfreq ttf-bitstream-vera ttf-cheapskate ttf-liberation tyrs-git virt-manager virtviewer volumeicon wgetpaste wicd-gtk wireshark-gtk xarchiver xclip xf86-input-synaptics xf86-video-ati xfsprogs xorg-fonts-type1 xorg-server-utils xorg-utils xorg-xinit xorg-xkill xorg-xmessage xulrunner zsh
+
+#create folder
+echo "create folder workspace/perso"
+mkdir -p workspace/perso
+
+# get source
+echo "Git clone dotfiles"
+git clone git@github.com:bacardi55/dotfiles.git
+
+
+### Dotfiles
+echo "Creating symlinks"
+cd ~
+ln -s /home/bacardi55/workspace/perso/dotfiles/tmux.conf .tmux.conf
+echo ".tmux.conf done"
+ln -s /home/bacardi55/workspace/perso/vim/vim/ .vim
+echo ".vim done"
+ln -s /home/bacardi55/workspace/perso/vim/vimrc .vimrc
+echo ".vimrc done"
+ln -s /home/bacardi55/workspace/perso/dotfiles/Xdefaults .Xdefaults
+echo ".Xdefaults done"
+ln -s /home/bacardi55/workspace/perso/dotfiles/xinitrc .xinitrc
+echo ".xinitrc done"
+ln -s /home/bacardi55/workspace/perso/dotfiles/zshrc .zshrc
+echo ".zshrc done"
+ln -s /home/bacardi55/workspace/perso/dotfiles/zshrc .zshrc
+echo ".zshrc done"
+
+echo "creating ~/.config"
+mkdir -p ~/.config
+cd .config
+ln -s /home/bacardi55/workspace/perso/dotfiles/wmfs wmfs
+echo ".config/wmfs done"
+
+# wmfs
+echo "wmfs installation"
+cd /home/bacardi55/workspace/perso/
+git clone …
+cd wmfs
+cmake .
+make clean && make 
+sudo make install
+
+#TODO
+#config sudoer
+sudo cp /home/bacardi55/workspace/dotfiles/sudoers /etc/
+sudo chown root:root /etc/sudoers
+sudo chmod 440 sudoers
+
+#config lm_sensors

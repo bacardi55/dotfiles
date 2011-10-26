@@ -14,6 +14,9 @@ set $mod Mod4
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
+# back_and_forth feature
+workspace_auto_back_and_forth yes
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -182,7 +185,18 @@ assign [class="Mail"] → 3
 # exec
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-exec i3status | i3bar -dtop
+#exec i3status | i3bar -dtop
+bar {
+  status_command i3status
+  mode dock
+  position top
+
+  colors {
+    background #000000
+    statusline #FFFFFF
+    urgent_workspace #FFFFFF #FF0000 
+  }
+}
 
 exec firefox
 exec thunderbird
