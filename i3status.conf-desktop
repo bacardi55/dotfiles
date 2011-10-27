@@ -1,0 +1,61 @@
+general {
+        colors = true
+        interval = 5
+}
+
+#order  = "ipv6"
+order = "disk /home"
+#order += "run_watch DHCP"
+#order += "run_watch VPN"
+order += "wireless wlan0"
+#order += "ethernet eth0"
+#order += "battery 1"
+order += "cpu_temperature 0"
+order += "load"
+order += "time"
+
+wireless wlan0 {
+  format_up = "W: (%quality - %essid) %ip"
+  format_down = "W: no"
+}
+
+ethernet eth0 {
+  # if you use %speed, i3status requires root privileges
+  format_up = "E: %ip (%speed)"
+	format_down = "E: down"
+}
+
+battery 1 {
+  format = "%status %percentage %remaining"
+}
+
+run_watch DHCP {
+  pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPN {
+  pidfile = "/var/run/vpnc/pid"
+}
+
+time {
+	format = "%d-%m-%Y %H:%M"
+}
+
+load {
+	format = "%1min"
+}
+
+cpu_temperature 0 {
+	format = "T: %degrees °C"
+}
+
+disk "/" {
+#format = "%free"
+  format = "%free / %total"
+}
+
+disk "/home" {
+  #format = "%free"
+  #format = "%free (%avail/ %total)"
+  format = "%free / %total"
+}
