@@ -2,10 +2,10 @@
 
 WORK="taf" # name of the work tag
 PERSO="perso" #name of the personnal tag
+MAIL="raphael@khaiat.org"
+MAIL_OBJECT="BILAN MENSUEL DU MOIS `date +%B`"
 
-
-
-echo " BILAN MENSUEL DU MOIS `date +%B`
+echo "BILAN MENSUEL DU MOIS `date +%B`
 
 ******** PRO ******** "> /tmp/task_intro
 echo "
@@ -29,5 +29,5 @@ task history.monthly +"$PERSO" > /tmp/task_hist_perso
 task ghistory.monthly +"$PERSO" > /tmp/task_ghist_perso
 
 
-cat /tmp/task_intro /tmp/task_hist_work /tmp/task_ghist_work /tmp/task_sum_work /tmp/task_separator /tmp/task_hist_perso /tmp/task_ghist_perso /tmp/task_sum_perso | mail -s "testounet" raphael@khaiat.org
+cat /tmp/task_intro /tmp/task_hist_work /tmp/task_ghist_work /tmp/task_sum_work /tmp/task_separator /tmp/task_hist_perso /tmp/task_ghist_perso /tmp/task_sum_perso | mail -s "$MAIL_OBJECT" "$MAIL"
 rm /tmp/task*
