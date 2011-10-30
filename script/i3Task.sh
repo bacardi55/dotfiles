@@ -5,13 +5,13 @@ PERSO="perso" #name of the personnal tag
 
 # TAF
 NB_TASK=`task long +"$WORK" | grep "$WORK" | wc -l`
-NB_ACTIVE_TASK=`task long active +"$WORK" | grep "$WORK" | wc -l`
+NB_ACTIVE_TASK=`task active +"$WORK" | grep "^ [0-9]" | wc -l`
 NB_TASK_DUE_TODAY=`task long +"$WORK" due:today | grep "$WORK" | wc -l`
 NB_TASK_DUE_EOW=`task long +"$WORK" due:eow | grep "$WORK" | wc -l`
 
 # PERSO
 NB_TASK_PERSO=`task long +"$PERSO" | grep "$PERSO" | wc -l`
-NB_ACTIVE_TASK_PERSO=`task long active +"$PERSO" | grep "$PERSO" | wc -l`
+NB_ACTIVE_TASK_PERSO=`task active +"$PERSO" | grep "^ [0-9]" | wc -l`
 NB_TASK_DUE_TODAY_PERSO=`task long +"$PERSO" due:today | grep "$PERSO" | wc -l`
 NB_TASK_DUE_EOW_PERSO=`task long +"$PERSO" due:eow | grep "$PERSO" | wc -l`
 

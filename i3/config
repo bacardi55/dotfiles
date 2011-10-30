@@ -131,7 +131,7 @@ bindsym $mod+p exec cmus-remote -u
 bindsym $mod+n exec cmus-remote -n
 bindsym $mod+Shift+n exec cmus-remote -r
 
-#bindsym $mod+r mode "resize"
+bindsym $mod+Shift+S mode "resize"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -175,11 +175,11 @@ mode "resize" {
 bindsym $mod+F1 [title="^mutt"] focus
 bindsym $mod+F2 [title="irssi"] focus
 bindsym $mod+w [class="(?i)Firefox"] focus
-bindsym $mod+t [class="(?i)Thunderbird"] focus
+#bindsym $mod+t [class="(?i)Thunderbird"] focus
 
 # assign
 assign [class="Navigator"] → 1
-assign [class="Mail"] → 3
+#assign [class="Mail"] → 3
 
 
 # exec
@@ -187,7 +187,7 @@ assign [class="Mail"] → 3
 # finds out, if available)
 #exec i3status | i3bar -dtop
 bar {
-  status_command i3status
+  status_command i3Status55.sh
   mode dock
   position top
 
@@ -199,4 +199,4 @@ bar {
 }
 
 exec firefox
-exec thunderbird
+#exec thunderbird
