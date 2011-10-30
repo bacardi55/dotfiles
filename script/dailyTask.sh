@@ -57,5 +57,5 @@ echo "
 
 AU BOULOT ! :)" > /tmp/task_fin
 
-cat /tmp/task_intro /tmp/task_pre_today_work /tmp/task_today_work /tmp/task_pre_eow_work /tmp/task_eow_work /tmp/task_pre_work /tmp/task_work /tmp/task_pre_today_perso /tmp/task_today_perso /tmp/task_pre_eow_perso /tmp/task_eow_perso /tmp/task_pre_perso /tmp/task_perso /tmp/task_pre_timesheet /tmp/task_timesheet /tmp/task_fin | mail -s "$MAIL_OBJECT" "$MAIL"
+cat /tmp/task_intro /tmp/task_pre_today_work /tmp/task_today_work /tmp/task_pre_eow_work /tmp/task_eow_work /tmp/task_pre_work /tmp/task_work /tmp/task_separator /tmp/task_pre_today_perso /tmp/task_today_perso /tmp/task_pre_eow_perso /tmp/task_eow_perso /tmp/task_pre_perso /tmp/task_perso /tmp/task_pre_timesheet /tmp/task_timesheet /tmp/task_fin | mail -s "$MAIL_OBJECT" "$MAIL"
 rm /tmp/task*
