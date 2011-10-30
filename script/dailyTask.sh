@@ -21,32 +21,32 @@ echo "
 
 # TAF
 echo "TASK(S) FOR TODAY :" > /tmp/task_pre_today_work
-task +"$WORK" due:today > /tmp/task_today_work
+task ls +"$WORK" due:today > /tmp/task_today_work
 
 echo "
 
 TASK(S) FOR THE END OF WEEK" > /tmp/task_pre_eow_work
-task +"$WORK" due:eow > /tmp/task_eow_work
+task ls +"$WORK" due:eow > /tmp/task_eow_work
 
 echo "
 
 OPENED TASK(S)" > /tmp/task_pre_work
-task +"$WORK" > /tmp/task_work
+task ls +"$WORK" > /tmp/task_work
 
 # PERSO
 echo "
 TASK(S) FOR TODAY :" > /tmp/task_pre_today_perso
-task +"$PERSO" due:today > /tmp/task_today_perso
+task ls +"$PERSO" due:today > /tmp/task_today_perso
 
 echo "
 
 TASK(S) FOR THE END OF WEEK" > /tmp/task_pre_eow_perso
-task +"$PERSO" due:eow > /tmp/task_eow_perso
+task ls +"$PERSO" due:eow > /tmp/task_eow_perso
 
 echo "
 
 OPENED TASK(S)" > /tmp/task_pre_perso
-task +"$PERSO" > /tmp/task_perso
+task ls +"$PERSO" > /tmp/task_perso
 
 echo "
 
