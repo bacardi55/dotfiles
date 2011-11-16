@@ -1,3 +1,8 @@
 text/html; links %s; nametemplate=%s.html
 text/html; links -dump %s; nametemplate=%s.html; copiousoutput
 text/*; less
+
+application/x-tar; /bin/tar tvf -; print=/bin/tar tvf - | print text/plain:-; copiousoutput
+application/x-gtar; /bin/tar tvzf -; print=/bin/tar tvzf - | print text/plain:-; copiousoutput
+
+applica*/*vnd.ms-pow; soffice
