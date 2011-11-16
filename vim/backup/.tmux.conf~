@@ -1,5 +1,0 @@
-set -g prefix C-a
-unbind-key C-b
-bind-key C-a send-prefix
-
-bind-key C-a last-window
