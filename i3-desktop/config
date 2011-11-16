@@ -9,6 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# author : Raphaël Khaïat
+# Last Edit : 2011-10-28
+
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
@@ -55,7 +58,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # default orientation
-default_orientation auto
+default_orientation vertical
 
 # split in horizontal orientation
 bindsym $mod+v split h
@@ -112,7 +115,7 @@ bindsym $mod+Shift+9 move workspace 9
 bindsym $mod+Shift+0 move workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+C reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
@@ -124,14 +127,14 @@ bindsym XF86AudioRaiseVolume exec amixer set Master playback 5+
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # slock
-bindsym Pause exec slock
+bindsym Pause exec i3lock
 
 # Cmus
 bindsym $mod+p exec cmus-remote -u
 bindsym $mod+n exec cmus-remote -n
 bindsym $mod+Shift+n exec cmus-remote -r
 
-#bindsym $mod+r mode "resize"
+bindsym $mod+Shift+s mode "resize"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -175,11 +178,11 @@ mode "resize" {
 bindsym $mod+F1 [title="^mutt"] focus
 bindsym $mod+F2 [title="irssi"] focus
 bindsym $mod+w [class="(?i)Firefox"] focus
-bindsym $mod+t [class="(?i)Thunderbird"] focus
+#bindsym $mod+t [class="(?i)Thunderbird"] focus
 
 # assign
 assign [class="Navigator"] → 1
-assign [class="Mail"] → 3
+#assign [class="Mail"] → 3
 
 
 # exec
@@ -211,5 +214,12 @@ bar {
   }
 }
 
+exec dualscreen-desktop.sh
 exec firefox
-exec thunderbird
+#exec thunderbird
+
+#put workspace on specific output
+workspace 1 output VGA-1
+workspace 2 output VGA-1
+workspace 10 output VGA-1
+workspace 3 output DVI-I-1
