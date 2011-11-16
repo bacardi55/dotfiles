@@ -7,13 +7,15 @@ MAIL_PERSO_OBJECT="[PERSO] Bilan mensuel de `date +%B`"
 MAIL_WORK="raphael@khaiat.org"
 MAIL_WORK_OBJECT="[WORK] Bilan mensuel de `date +%B`"
 
+TASK=`which task`
+
 echo "BILAN MENSUEL DU MOIS de `date +%B`
 
 ******** PRO ******** "> /tmp/task_work_intro
 # TAF
-task sum +"$WORK" > /tmp/task_sum_work
-task history.monthly +"$WORK" > /tmp/task_hist_work
-task ghistory.monthly +"$WORK" > /tmp/task_ghist_work
+"$TASK" sum +"$WORK" > /tmp/task_sum_work
+"$TASK" history.monthly +"$WORK" > /tmp/task_hist_work
+"$TASK" ghistory.monthly +"$WORK" > /tmp/task_ghist_work
 
 
 cat /tmp/task_work_intro /tmp/task_hist_work /tmp/task_ghist_work /tmp/task_sum_work | mail -s "$MAIL_WORK_OBJECT" "$MAIL_WORK"
@@ -25,9 +27,9 @@ echo "BILAN MENSUEL DU MOIS de `date +%B`
 ******* PERSO ******* " > /tmp/task_perso_intro
 
 # PERSO
-task sum +"$PERSO" > /tmp/task_sum_perso
-task history.monthly +"$PERSO" > /tmp/task_hist_perso
-task ghistory.monthly +"$PERSO" > /tmp/task_ghist_perso
+"$TASK" sum +"$PERSO" > /tmp/task_sum_perso
+"$TASK" history.monthly +"$PERSO" > /tmp/task_hist_perso
+"$TASK" ghistory.monthly +"$PERSO" > /tmp/task_ghist_perso
 
 
 cat /tmp/task_perso_intro /tmp/task_hist_perso /tmp/task_ghist_perso /tmp/task_sum_perso | mail -s "$MAIL_PERSO_OBJECT" "$MAIL_PERSO"
