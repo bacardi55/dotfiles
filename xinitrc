@@ -4,7 +4,7 @@ urxvtd -q -f -o &
 wicd-gtk &
 volumeicon &
 keepassx & 
-#parcellite &
+parcellite &
 cherrytree &
 sh ~/.fehbg &
 #mocp -S &

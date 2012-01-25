@@ -27,8 +27,8 @@ alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars 
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias ld="ls -l | egrep '^d'"    # show folders only
-alias lf="ls -l | egrep -v '^d'" # show files only
+alias ld="ls -l | grep '^d'"    # show folders only
+alias lf="ls -l | grep -v '^d'" # show files only
 alias grep='grep --color=auto'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
@@ -57,8 +57,8 @@ alias reboot='sudo reboot'
 # dev alias
 alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
 
-# ssh gate alias
-alias sshg="ssh -t sshgate@gate.par.lng"
+# alias mutt
+alias mutt="rename_urxvt.sh mutt && mutt"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups
@@ -142,4 +142,4 @@ cczeTail() {tail -f $1 | ccze -A;}
 grepSvn() {grep -rin --exclude-dir="*svn*" $1 ./}
 
 
-fortune
+#fortune

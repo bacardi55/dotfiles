@@ -8,6 +8,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+PATH=/home/bacardi55/script/:$PATH;
 
 # Prompt
 PS1="[%n@%M %~]%# "
@@ -16,9 +17,9 @@ RPS1="%{"$'\033[01;34m'"%}(%T)%{"$'\033[00m'"%}"
 # environment
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER="chromium"
+export BROWSER="firefox"
 export PAGER="most"
-export XTERM="urxvt"
+export XTERM="urxvtc"
 
 # Alias
 alias l='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
@@ -26,8 +27,8 @@ alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars 
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias ld="ls -l | egrep '^d'"    # show folders only
-alias lf="ls -l | egrep -v '^d'" # show files only
+alias ld="ls -l | grep '^d'"    # show folders only
+alias lf="ls -l | grep -v '^d'" # show files only
 alias grep='grep --color=auto'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
@@ -41,23 +42,23 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias top="htop"
 alias more="most"
-alias less="most"
+#alias less="most"
 alias df='df -h'
 alias du='du -hc'
 
+# taskwarrior alias
+alias task_perso="c && task project!=ctb && task summary project!=ctb"
+alias task_boulot="c && task project:ctb && task summary project:ctb"
 
-alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
-alias drupal_flush="cp sites/default/default.settings.php sites/default/settings.php && chmod 777 sites/default/settings.php"
-alias vpn_scpo="sudo vpnc script/vpn_scpo.conf"
-
-alias mount_portail_scpo="sshfs bacardi55@scpo:workspace/scpo /home/rkhaiat/workspace/scpo"
-alias mount_2013_scpo="sshfs bacardi55@scpo:workspace/scpo /home/rkhaiat/workspace/scpo2013"
-alias mount_entrepreneur_scpo="sshfs bacardi55@scpo:workspace/scpo /home/rkhaiat/workspace/entrepreneur"
-
+# sudo alias
 alias halt='sudo halt'
 alias reboot='sudo reboot'
 
-alias red="redshift -l '48.858083:2.294961' -t '6500:3600'"
+# dev alias
+alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
+
+# ssh gate alias
+alias sshg="ssh -t sshgate@gate.par.lng"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups
@@ -133,8 +134,12 @@ compinit
 
 zmodload zsh/complist
 compdef yaourt=pacman
+alias pacman="pacman-color"
 
 cczeLess() {ccze -A < $1 | less -R;}
 cczeTail() {tail -f $1 | ccze -A;}
 
-grepScpo() {grep -rin --exclude-dir="*svn*" $1 ./}
+grepSvn() {grep -rin --exclude-dir="*svn*" $1 ./}
+
+
+#fortune

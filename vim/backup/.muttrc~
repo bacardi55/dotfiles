@@ -1,16 +1,44 @@
 # Maintainer:	Raphael Khaiat <raphael@khaiat.org>
-# Last change:	2009 Dec 08
-
+# Last change:	2011-10-06
 
 ###############################################
 #### Configuration
 ###############################################
 
-set folder = "imaps://raphael@khaiat.org@mail.khaiat.org:993"
-set spoolfile = "+INBOX"
+set folder      = imaps://mail.khaiat.org/
+set imap_user   = raphael@khaiat.org
+#set imap_pass   = your-imap-password
+set spoolfile   = +INBOX
+#mailboxes       = +INBOX
+set imap_check_subscribed
+
+# store message headers locally to speed things up
+set header_cache = ~/.mutt/hcache
+
+# specify where to save and/or look for postponed messages
+set postponed = "imaps://raphael@khaiat.org@mail.khaiat.org:993/Drafts"
+
+# allow mutt to open new imap connection automatically
+unset imap_passive
+
+# keep imap connection alive by polling intermittently (time in seconds)
+set imap_keepalive = 300
+
+# how often to check for new mail (time in seconds)
+set mail_check = 120
+
+#old conf :
+#set folder = "imaps://raphael@khaiat.org@mail.khaiat.org:993/INBOX/"
+#set spoolfile = "imaps://raphael@khaiat.org@mail.khaiat.org:993/INBOX"
+#
+## Les mailboxes sont les autres dossiers ou les mails seront vérfiés :
+##mailboxes = "imaps://rkhaiat@linagora.com@mail.linagora.com:993/INBOX"
+#mailboxes = "imaps://raphael@khaiat.org@mail.khaiat.org:993/INBOX"
+#
+##mailboxes = "imaps://rkhaiat@mail.linagora.com:993/INBOX"
 
 # L'adresse du serveur smtp
-set smtp_url = "smtp://raphael@khaiat.org@mail.mail.khaiat.org:25/"
+set smtp_url = "smtp://raphael@khaiat.org@mail.khaiat.org:25/"
 
 # Pour copier les mails envoyés sur le serveur (mailboxe sent)
 set record = "imaps://raphael@khaiat.org@mail.khaiat.org:993/Sent"
@@ -18,8 +46,8 @@ set record = "imaps://raphael@khaiat.org@mail.khaiat.org:993/Sent"
 set from = "Raphael Khaiat <raphael@khaiat.org>"
 set realname = "Raphael Khaiat"
 
-# Le tri (ici ordre inversé : les derniers mails en haut)
-set sort = "reverse-threads"
+# Les adresses alternatives auxquelles on peut recevoir un email
+alternates '^bacardi55@gmail\.com$|^raphael.khaiat@gmail\.com$'
 
 set timeout = 15
 set mail_check = 60
@@ -33,10 +61,10 @@ set editor = "vim" # what else...
 set certificate_file=~/.mutt/.mutt.crt
 
 # Fichier ou sont les alias
-set alias_file=~/.mutt/aliases
-set sort_alias=alias
-set reverse_alias=yes
-source $alias_file
+#set alias_file=~/.mutt/aliases
+#set sort_alias=alias
+#set reverse_alias=yes
+#source $alias_file
 
 alternative_order text/enriched text/plain text/html
 auto_view text/html
@@ -44,13 +72,19 @@ auto_view text/html
 # option before quitting
 set quit = "ask-no"
 
-# beep new mail (=> urgent tag pour wmfs)
+# beep new mail (=> urgent tag)
 set beep_new=yes
+
+#############
+###  Abook  ##
+##############
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Ajouter cet expéditeur dans Abook"
+bind editor  <Tab> complete-query
 
 ###############################################
 #### Affichage
 ###############################################
-
 
 set attribution="Le %d, %n a écrit :"	# en-tête pour les réponses
 set delete=ask-yes			# purger les messages supprimés sans confirmation
@@ -75,8 +109,10 @@ set reply_to			# utiliser l'en-tête reply-to
 set reply_regexp="^([Rr][Ee]:[ \t]*)+"# identification des réponses par le
 #sujet
 
-set sort=threads		# tri par fil de discussion
 
+
+## TRI
+set sort=threads		# tri par fil de discussion
 set sort_aux=reverse-date-received	# puis par date
 set sort_browser=reverse-date	# tri des fichiers dans le navigateur
 set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
@@ -103,33 +139,97 @@ unignore	from subject to cc mail-followup-to \
 unhdr_order *
 hdr_order date from subject to cc
 
+###############
+##  Sidebar  ##
+###############
+ 
+## Options ##
+ 
+# Largeur (px)
+set sidebar_width=30
+ 
+# Visible (yes/no)
+set sidebar_visible=yes
+ 
+# Délimiteur 
+set sidebar_delim='|'
+ 
+# Trie alphabétique (yes/no)
+set sidebar_sort=no
+ 
+# Libellé(s) à affiché(s) ( =box1 =box2)
+mailboxes =INBOX
+ 
+# Couleur (Nouveau mail)
+color sidebar_new red default
+ 
+## Raccourcis clavier ##
+ 
+# Précédent, suivant, ouvrir
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+ 
+# Afficher/Cacher la sidebar
+macro index b 'toggle sidebar_visible'
+macro pager b 'toggle sidebar_visible'
+
+# bounce-message 
+bind index B bounce-message
+
+# send email to taskwarrior
+macro index w "<pipe-message>mutt2task.sh<enter>"
+
+# send email to Archives/2011
+macro index A "<save-message>=Archives/2011<enter>"
 
 ###############################################
 #### Couleur
 ###############################################
 
-color normal            white   black
-color indicator         brightyellow red
-color status            yellow blue
-color hdrdefault        brightcyan black
-color header            brightyellow black ^Subject:
-color header            brightgreen black ^From:
-color header            brightred black ^X-Mailer:
-color header            brightred black ^User-Agent:
-color quoted            cyan black
-color quoted1			green black
-color quoted2           cyan black
-color quoted3           green black
-color attachment        brightyellow black
-color signature         brightmagenta black
-color tree              brightred black
-color tilde             brightblue black
-color markers           brightred black
-color error             brightred black
-color bold				brightred black
-color underline			brightgreen black
 
 
 color body brightred black  "((ftp|http|https)://|(file|news):|www\\.|ftp\\.)[-a-z0-9_.:]*[a-z0-9](/[^][{} \t\n\r\"<>()]*[^][{} \t\n\r\"<>().,:!])?/?" # url
 color body brightred black [-a-z_0-9.]+@[-a-z_0-9.]+    # les adresses mails
 color body brightyellow black "[#](:|;)[-^]?[][)(><}{|/DP]"
+
+#color normal            white   black
+#color indicator         brightyellow red
+#color status            yellow blue
+#color hdrdefault        brightcyan black
+#color header            brightyellow black ^Subject:
+#color header            brightgreen black ^From:
+#color header            brightred black ^X-Mailer:
+#color header            brightred black ^User-Agent:
+#color quoted            cyan black
+#color quoted1			green black
+#color quoted2           cyan black
+#color quoted3           green black
+#color attachment        brightyellow black
+#color signature         brightmagenta black
+#color tree              brightred black
+#color tilde             brightblue black
+#color markers           brightred black
+#color error             brightred black
+#color bold				brightred black
+#color underline			brightgreen black
+
+
+color hdrdefault    blue            black
+color quoted        blue            black
+color signature     blue            black
+color attachment    red             black
+color message       brightred       black
+color error         brightred       black
+color indicator     black           red
+color status        brightgreen     blue
+color tree          white           black
+color normal        white           black
+color markers       red             black
+color search        white           black
+color tilde         brightmagenta   black
+color index         blue            black ~F
+color index         red             black "~N|~O"
