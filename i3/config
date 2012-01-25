@@ -124,7 +124,7 @@ bindsym XF86AudioRaiseVolume exec amixer set Master playback 5+
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # slock
-bindsym Pause exec slock
+bindsym Pause exec i3lock
 
 # Cmus
 bindsym $mod+p exec cmus-remote -u
