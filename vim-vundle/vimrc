@@ -216,6 +216,8 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'docteurklein/vim-symfony'
+Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -269,13 +271,14 @@ inoremap [ []<left>
 inoremap '' ''<left>
 inoremap "" ""<left>
 inoremap , , 
+
 "php
 inoremap <? <?php<space><space>?><left><left><left>
+inoremap ³ $
+inoremap ² ->
 
-" sur pression de la touche F3 highlight les charactères qui dépassent la
-" 80ème colonne
-"map <silent> <F3> "<Esc>:match ErrorMsg '\%>80v.\+'<CR>"
-"map <silent> <F4> "<Esc>:match ErrorMsg '\%>800v.\+'<CR>"
+" Remove trailing space
+autocmd BufWritePre * :%s/\s\+$//e
 
 " La list des méthodes/variables
 nnoremap <F3> :TlistToggle<CR>
@@ -327,5 +330,5 @@ if has('cscope')
   cnoreabbrev css cs show
   cnoreabbrev csh cs help
 
-  command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+  "command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
 endif
