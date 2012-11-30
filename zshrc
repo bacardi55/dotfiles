@@ -18,15 +18,19 @@ RPS1="%{"$'\033[01;34m'"%}(%T)%{"$'\033[00m'"%}"
 export EDITOR=vim
 export VISUAL=vim
 export BROWSER="firefox"
-export PAGER="most"
+export PAGER="most -s"
 export XTERM="urxvtc"
 
 # Alias
-alias l='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
+#alias l='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
+#alias ll='ls -l'
+#alias la='ls -a'
+#alias lla='l+ -la'
+alias ll="ls++"
+alias ls="ls++"
+alias l="ls++"
+alias la="ls++ -a"
 alias ld="ls -l | grep '^d'"    # show folders only
 alias lf="ls -l | grep -v '^d'" # show files only
 alias grep='grep --color=auto'
@@ -54,11 +58,19 @@ alias task_boulot="c && task project:ctb && task summary project:ctb"
 alias halt='sudo halt'
 alias reboot='sudo reboot'
 
+# mutt
+alias mutt="rename_urxvt.sh mutt && mutt"
+
 # dev alias
 alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
 
 # alias mutt
 alias mutt="rename_urxvt.sh mutt && mutt"
+
+# mount sshfs
+alias mount_lcl="sshfs root@debian2:/var/www/lcl lcl"
+alias mount_shareAccount="sshfs root@debian2:/var/www/shareAccount /home/bacardi55/workspace/perso/shareAccount"
+alias mount_sncf="sshfs root@debian2:/var/www/SNCFcomDrupal/www /home/bacardi55/workspace/capgemini/sncf/sncfcom"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups
@@ -140,6 +152,3 @@ cczeLess() {ccze -A < $1 | less -R;}
 cczeTail() {tail -f $1 | ccze -A;}
 
 grepSvn() {grep -rin --exclude-dir="*svn*" $1 ./}
-
-
-#fortune
