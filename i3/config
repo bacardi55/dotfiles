@@ -81,35 +81,36 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+q focus parent
 
 # focus the child container
-#bindcode $mod+d focus child
+bindcode $mod+Shift+q focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+#bindsym $mod+ workspace 1
+bindsym $mod+ampersand workspace 1: www
+bindsym $mod+eacute workspace 2: dev
+bindsym $mod+quotedbl workspace 3: mail
+bindsym $mod+apostrophe workspace 4: irc
+bindsym $mod+parenleft workspace 5: misc
+bindsym $mod+minus workspace 6: misc
+bindsym $mod+egrave workspace 7: misc
+bindsym $mod+underscore workspace 8: misc
+bindsym $mod+ccedilla workspace 9: misc
+bindsym $mod+agrave workspace 10: im
 
 # switch next/prev
 bindsym $mod+mod1+Left workspace prev
 bindsym $mod+mod1+Right workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1
-bindsym $mod+Shift+2 move workspace 2
-bindsym $mod+Shift+3 move workspace 3
-bindsym $mod+Shift+4 move workspace 4
-bindsym $mod+Shift+5 move workspace 5
-bindsym $mod+Shift+6 move workspace 6
-bindsym $mod+Shift+7 move workspace 7
-bindsym $mod+Shift+8 move workspace 8
-bindsym $mod+Shift+9 move workspace 9
-bindsym $mod+Shift+0 move workspace 10
+bindsym $mod+Shift+1 move workspace 1: www
+bindsym $mod+Shift+2 move workspace 2: dev
+bindsym $mod+Shift+3 move workspace 3: mail
+bindsym $mod+Shift+4 move workspace 4: irc
+bindsym $mod+Shift+5 move workspace 5: misc
+bindsym $mod+Shift+6 move workspace 6: misc
+bindsym $mod+Shift+7 move workspace 7: misc
+bindsym $mod+Shift+8 move workspace 8: misc
+bindsym $mod+Shift+9 move workspace 9: misc
+bindsym $mod+Shift+0 move workspace 10: im
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -124,7 +125,11 @@ bindsym XF86AudioRaiseVolume exec amixer set Master playback 5+
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # slock
-bindsym Pause exec i3lock
+bindsym Pause exec i3-msg workspace 8 && i3lock -i /home/bacardi55/images/akuSokuZan.png -d
+
+# alt tab old school style
+bindsym Mod1+Tab focus right
+bindsym Mod1+Shift+Tab focus left
 
 # Cmus
 bindsym $mod+p exec cmus-remote -u
@@ -152,6 +157,20 @@ bindsym mod1+F3 exec ~/workspace/perso/i3-wm-scripts/goto
 #bindsym $mod+w [class="(?i)Firefox"] focus
 #bindsym $mod+t [class="(?i)Thunderbird"] focus
 
+# Border
+bindsym $mod+Shift+b border normal
+bindsym $mod+b border 1pixel
+bindsym $mod+mod1+b border none
+new_window 1pixel
+
+# Scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+twosuperior move scratchpad
+# Show the first scratchpad window
+bindsym $mod+twosuperior scratchpad show
+
+# Urgent
+bindsym $mod+Escape [urgent=latest] focus
 
 
 # RESIZE
@@ -210,12 +229,3 @@ bar {
     urgent_workspace #FFFFFF #FF0000
   }
 }
-
-# assign
-assign [class="Navigator"] → 1
-#assign [class="Mail"] → 3
-
-
-
-exec firefox
-#exec thunderbird
