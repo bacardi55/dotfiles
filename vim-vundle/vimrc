@@ -1,15 +1,9 @@
 " Maintainer:   Raphael Khaiat <raphael@khaiat.org>
-" Last change:  2012 April 26
+" Last change:  2013 January 1st
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 
 """ """""""" """
 """ SETTINGS """
@@ -39,6 +33,8 @@ set title
 set errorbells
 set novisualbell
 set t_vb=
+
+set colorcolumn=80
 
 " Quand une fermeture de parenthèse est entrée par l'utilisateur,
 " l'éditeur saute rapidement vers l'ouverture pour montrer où se
@@ -71,12 +67,6 @@ let php_baselib = 1
 let php_htmlInStrings = 1
 let php_noShortTags = 1
 let php_folding = 1
-
-" pour xptemplate
-filetype plugin on
-let g:xptemplate_key="<C-c>"
-let g:xptemplate_nav_next="&"
-let g:xptemplate_nav_prev="<S-&>"
 
 " pour sparkup
 let g:sparkupNextMapping="<C-b>"
@@ -228,6 +218,16 @@ Bundle "vim-scripts/taglist.vim"
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hobbestigrou/vimtips-fortune'
+
+" snipMate dependencies
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+" snipMate for Drupal :
+Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+
+Bundle 'Gundo'
 " Bundle 'vim-scripts/DBGp-client'
 " vim-scripts repos
 Bundle 'ManPageView'
@@ -264,6 +264,9 @@ map <S-tab> gT
 " Pour insérer un saut de ligne en mode normal :
 map <S-r> i<CR><ESC>
 
+" Gundo
+nnoremap <F4> :GundoToggle<CR>
+
 " Ferme une parenthese, et se place entre les deux, a mettre dans le .vimrc
 inoremap ( ()<left>
 inoremap { {}<left>
@@ -274,7 +277,7 @@ inoremap , ,
 
 "php
 inoremap <? <?php<space><space>?><left><left><left>
-inoremap ³ $
+inoremap ³ => 
 inoremap ² ->
 
 " Remove trailing space
@@ -297,9 +300,6 @@ map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
 
-" pour effacer les espaces de fin de ligne
-"map <F6> :%s/\s*$//<CR>
-
 function! RunPhpcs()
     let l:filename=@%
     let l:phpcs_output=system('phpcs --report=csv --standard=YMC '.l:filename)
@@ -312,23 +312,29 @@ endfunction
 
 set errorformat+=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\"
 command! Phpcs execute RunPhpcs()
+
+""" SESSION
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    let FILESESSION=expand("./session.vim")
+    if filereadable(FILESESSION)
+      execute 'source ./session.vim'
+    endif
+  end
+endfunction
+
+nmap SQ <ESC>:mksession! ./session.vim<CR>:wqa<CR>
+autocmd VimEnter * call RestoreSession()
+
+""" /SESSION
+
+"set filetype=drupal.php
+
 """ """""""" """
 """ /MAPPING """
 """ """""""" """
 
-if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-
-  "command -nargs=0 Cscope cs add $VIMSRC/src/cscope.out $VIMSRC/src
+let FILETAG=expand("./tags")
+if filereadable(FILETAG)  
+  set tags=tags
 endif
