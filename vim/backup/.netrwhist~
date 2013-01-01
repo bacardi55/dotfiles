@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/rkhaiat/.mutt'
-let g:netrw_dirhist_2='/srv/http/scpo/sites/all/modules/sciences_po/scpo_breadcrumb'
-let g:netrw_dirhist_3='/home/rkhaiat/tmp'
-let g:netrw_dirhist_4='/home/rkhaiat/.mutt'
-let g:netrw_dirhist_5='/home/rkhaiat/workspace/simplepie/test'
-let g:netrw_dirhist_6='/home/bacardi55/workspace/perso/dotfiles/.git'
