@@ -13,11 +13,10 @@ if [ "$1" == "drupal" ];then
 
 elif [ "$1" == "framework" ];then
   echo "running framework ctags";
-  exec ctags-exuberant
-    -h \".php\" -R \
-    --exclude=\"\.svn\" \
+  exec ctags -f tags -h ".php" -R \
+    --exclude=".svn" \
     --totals=yes \
-    --tag-relative=yes \
+    #--tag-relative=yes \
     --PHP-kinds=+cf \
     --regex-PHP='/abstract class ([^ ]*)/\1/c/' \
     --regex-PHP='/interface ([^ ]*)/\1/c/' \

@@ -1,7 +1,7 @@
 # -----------------------|
 # ZSHRC                  |
 # @author Raphael Khaiat |
-# @modified 08/04/10     |
+# @modified 11/12/12     |
 # -----------------------|
 
 # History
@@ -21,12 +21,6 @@ export BROWSER="firefox"
 export PAGER="most -s"
 export XTERM="urxvtc"
 
-# Alias
-#alias l='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-#alias ls='ls --classify --tabsize=0 --literal --color=auto --show-control-chars --human-readable'
-#alias ll='ls -l'
-#alias la='ls -a'
-#alias lla='l+ -la'
 alias ll="ls++"
 alias ls="ls++"
 alias l="ls++"
@@ -45,32 +39,25 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 alias top="htop"
-alias more="most"
+alias more="most -s"
 #alias less="most"
 alias df='df -h'
 alias du='du -hc'
 
-# taskwarrior alias
-alias task_perso="c && task project!=ctb && task summary project!=ctb"
-alias task_boulot="c && task project:ctb && task summary project:ctb"
-
 # sudo alias
 alias halt='sudo halt'
 alias reboot='sudo reboot'
-
-# mutt
-alias mutt="rename_urxvt.sh mutt && mutt"
 
 # dev alias
 alias del_svn_dir='find . -name ".svn" -type d -exec rm -rf {} \;'
 
 # alias mutt
 alias mutt="rename_urxvt.sh mutt && mutt"
+alias mutt_cap="rename_urxvt.sh mutt_cap && mutt -F ~/.muttrc_cap"
 
-# mount sshfs
-alias mount_lcl="sshfs root@debian2:/var/www/lcl lcl"
-alias mount_shareAccount="sshfs root@debian2:/var/www/shareAccount /home/bacardi55/workspace/perso/shareAccount"
-alias mount_sncf="sshfs root@debian2:/var/www/SNCFcomDrupal/www /home/bacardi55/workspace/capgemini/sncf/sncfcom"
+# i3WebManager aliases
+alias i3CliStartHome="cd .i3/i3WebManager-0.3 && php console i3CliManager:start home"
+alias i3CliStartWork="cd .i3/i3WebManager-0.3 && php console i3CliManager:start work"
 
 # Conf'
 setopt appendhistory autocd auto_pushd pushd_ignore_dups correct hist_verify hist_ignore_dups
@@ -147,6 +134,10 @@ compinit
 zmodload zsh/complist
 compdef yaourt=pacman
 alias pacman="pacman-color"
+
+fpath=($fpath /usr/local/share/doc/task/scripts/zsh)
+autoload -Uz compinit
+compinit
 
 cczeLess() {ccze -A < $1 | less -R;}
 cczeTail() {tail -f $1 | ccze -A;}

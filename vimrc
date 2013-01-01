@@ -17,6 +17,7 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+call pathogen#infect()
 
 set history=100     " keep 100 lines of command line history
 set ruler       " show the cursor position all the time
@@ -88,6 +89,7 @@ if has("autocmd")
     autocmd BufRead,BufNewFile *.module set filetype=php
     autocmd BufRead,BufNewFile *.install set filetype=php
     autocmd BufRead,BufNewFile *.test set filetype=php
+    autocmd BufRead,BufNewFile *.profile set filetype=php
   augroup END
 else
 
@@ -131,6 +133,9 @@ set backup " On active le comportement
 set laststatus=2 " Affiche la barre de statut quoi qu'il en soit (0 pour la masquer, 1 pour ne l'afficher que si l'écran est divise)
 if has("statusline")
     set statusline=\ %f%m%r\ [%{strlen(&ft)?&ft:'aucun'},%{strlen(&fenc)?&fenc:&enc},%{&fileformat},ts:%{&tabstop}]%=%l,%c%V\ %P
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 elseif has("cmdline_info")
     set ruler " Affiche la position du curseur en bas a gauche de l'écran
 endif
@@ -168,10 +173,14 @@ set tabstop=2       " nombre d'espaces par tab
 set shiftwidth=2    " nombre de caractère utilisé pour l'indentation
 set softtabstop=2   " pour que backspace supprime 4 espaces:
 set expandtab       " Remplace les tab par des espaces
-set scrolloff=2
+
+set scrolloff=10
 
 "set ttymouse=xterm2 " pour avoir la souris même dans screen
 set ttymouse=xterm  " pour avoir la souris même dans tmux
+
+set winwidth=110
+set winheight=30
 
 " Pour insérer un saut de ligne en mode normal :
 map <S-r> i<CR><ESC>
@@ -228,3 +237,12 @@ let g:xptemplate_nav_prev="<S-&>"
 let g:sparkupNextMapping="<C-b>"
 
 cab wr w !sudo tee %
+
+"syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_jump=1
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['php'], 'passive_filetypes': ['python'] }

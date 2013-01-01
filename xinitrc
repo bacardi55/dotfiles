@@ -16,6 +16,8 @@ unclutter -grab &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
+redshift -l 48.8566667:2.3509871 &
+
 #sh ~/.config/wmfs/status.sh &
 #exec ck-launch-session gnome
 exec ck-launch-session i3

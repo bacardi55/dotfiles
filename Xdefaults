@@ -25,13 +25,13 @@ URxvt.background: #121212
 URxvt.foreground: #999999
 URxvt.cursorColor: #5E468C
 URxvt.geometry: 80x22
-URxvt.transparent: 0
+URxvt.transparent: true
 
 
-! teh transparency stuff
+! the transparency stuff
 URxvt*inheritPixmap: false
-URxvt*tintColor: #080808
-URxvt*shading: 0
+!URxvt*tintColor: #080808
+!URxvt*shading: 1
 
 ! -- Fonts -- !
 URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12:antialias=true
@@ -66,34 +66,52 @@ URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12:antialias=tr
 
 
 ! Zenburn -----
-*foreground: #dcdccc
+!*foreground: #dcdccc
+!
+!!black
+!*color0: #3F3F3F
+!*color0: #1E2320
+!*color8: #709080
+!!red
+!*color1: #705050
+!*color9: #DCA3A3
+!!green
+!*color2: #60B48A
+!*color10: #C3BF9F
+!!yellow
+!*color3: #DFAF8F
+!*color11: #F0DFAF
+!!blue
+!*color4: #506070
+!*color12: #94BFF3
+!!magenta
+!*color5: #DC8CC3
+!*color13: #EC93D3
+!!cyan
+!*color6: #8CD0D3
+!*color14: #93E0E3
+!!white
+!*color7: #DCDCCC
+!*color15: #FFFFFF
 
-!black
-*color0: #3F3F3F
-*color0: #1E2320
-*color8: #709080
-!red
-*color1: #705050
-*color9: #DCA3A3
-!green
-*color2: #60B48A
-*color10: #C3BF9F
-!yellow
-*color3: #DFAF8F
-*color11: #F0DFAF
-!blue
-*color4: #506070
-*color12: #94BFF3
-!magenta
-*color5: #DC8CC3
-*color13: #EC93D3
-!cyan
-*color6: #8CD0D3
-*color14: #93E0E3
-!white
-*color7: #DCDCCC
-*color15: #FFFFFF
-
+*background: rgb:1a/1a/1a
+*foreground: rgb:aa/aa/aa
+*color0:     rgb:00/00/00
+*color8:     rgb:66/66/66
+*color1:     rgb:9e/18/28
+*color9:     rgb:bc/57/66
+*color2:     rgb:00/88/00
+*color10:    rgb:61/a1/71
+*color3:     rgb:d2/bb/4b
+*color11:    rgb:e7/db/52
+*color4:     rgb:41/41/71
+*color12:    rgb:50/85/af
+*color5:     rgb:96/3c/59
+*color13:    rgb:a9/7a/99
+*color6:     rgb:41/81/79
+*color14:    rgb:6b/a4/a4
+*color7:     rgb:be/be/be
+*color15:    rgb:ff/ff/ff
 
 ! -- Clickable urls -- !
 urxvt*perl-lib:        /usr/lib/urxvt/perl/
