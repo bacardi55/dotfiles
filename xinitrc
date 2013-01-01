@@ -1,19 +1,22 @@
 #!/bin/sh
-urxvtd -q -f -o & 
+urxvtd -q -f -o &
 
-wicd-gtk &
+#wicd-gtk &
 volumeicon &
-keepassx & 
-parcellite &
-cherrytree &
+#keepassx &
+#parcellite &
+#cherrytree &
 sh ~/.fehbg &
 #mocp -S &
-trayfreq &
+#trayfreq &
 #ptbatterysystemtray &
-unclutter &
-twmnd &
+unclutter -grab &
+#twmnd &
+
+xset +fp /usr/share/fonts/local
+xset fp rehash
 
 #sh ~/.config/wmfs/status.sh &
-
+#exec ck-launch-session gnome
 exec ck-launch-session i3
 #exec ck-launch-session wmfs
