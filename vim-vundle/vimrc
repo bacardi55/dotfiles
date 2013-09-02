@@ -61,12 +61,74 @@ set ttymouse=xterm  " pour avoir la souris même dans tmux
 "set winwidth=110
 "set winheight=30
 
+
+
+""" """""" """
+""" BUNDLE """
+""" """""" """
+filetype off " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'brookhong/DBGPavim'
+Bundle 'docteurklein/vim-symfony'
+Bundle 'arnaud-lb/vim-php-namespace'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+Bundle "vim-scripts/autoload_cscope.vim"
+Bundle "vim-scripts/taglist.vim"
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'hobbestigrou/vimtips-fortune'
+Bundle 'vim-scripts/phpfolding.vim'
+Bundle 'tpope/vim-fugitive'
+
+" snipMate dependencies
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+" snipMate for Drupal :
+Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+
+Bundle 'Gundo'
+" vim-scripts repos
+Bundle 'ManPageView'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+
+filetype plugin indent on " required!
+"
+" Brief help
+" :BundleList - list configured bundles
+" :BundleInstall(!) - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+""" """"""" """
+""" /BUNDLE """
+""" """"""" """
+
 " Reglages pour le php
 let php_sql_query = 1
 let php_baselib = 1
 let php_htmlInStrings = 1
 let php_noShortTags = 1
-let php_folding = 1
+let php_folding = 0
 
 " pour sparkup
 let g:sparkupNextMapping="<C-b>"
@@ -189,67 +251,6 @@ elseif has("cmdline_info")
 endif
 
 
-
-
-""" """""" """
-""" BUNDLE """
-""" """""" """
-filetype off " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'docteurklein/vim-symfony'
-Bundle 'arnaud-lb/vim-php-namespace'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-Bundle "vim-scripts/autoload_cscope.vim"
-Bundle "vim-scripts/taglist.vim"
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'hobbestigrou/vimtips-fortune'
-
-" snipMate dependencies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
-" snipMate for Drupal :
-Bundle 'theunraveler/Drupal-Snippets-for-Vim'
-
-Bundle 'Gundo'
-" Bundle 'vim-scripts/DBGp-client'
-" vim-scripts repos
-Bundle 'ManPageView'
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-" ...
-
-filetype plugin indent on " required!
-"
-" Brief help
-" :BundleList - list configured bundles
-" :BundleInstall(!) - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!) - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-""" """"""" """
-""" /BUNDLE """
-""" """"""" """
-
-
 """ """"""" """
 """ MAPPING """
 """ """"""" """
@@ -273,11 +274,11 @@ inoremap { {}<left>
 inoremap [ []<left>
 inoremap '' ''<left>
 inoremap "" ""<left>
-inoremap , , 
+inoremap , ,
 
 "php
 inoremap <? <?php<space><space>?><left><left><left>
-inoremap ³ => 
+inoremap ³ =>
 inoremap ² ->
 
 " Remove trailing space
@@ -299,6 +300,17 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
+
+" PHP folds
+map <F11> <Esc>:EnableFastPHPFolds<Cr>
+"map <S-F6> <Esc>:EnablePHPFolds<Cr>
+map <F12> <Esc>:DisablePHPFolds<Cr>
+
+" Xdebug
+let g:dbgPavimKeyRun = '<F5>'
+let g:dbgPavimKeyQuit = '<F6>'
+let g:dbgPavimPort = 9000
+map <F5> <Esc>:python dbgPavim.run()<Cr>
 
 function! RunPhpcs()
     let l:filename=@%
@@ -335,6 +347,6 @@ autocmd VimEnter * call RestoreSession()
 """ """""""" """
 
 let FILETAG=expand("./tags")
-if filereadable(FILETAG)  
+if filereadable(FILETAG)
   set tags=tags
 endif
