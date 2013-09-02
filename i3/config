@@ -29,6 +29,7 @@ bindsym $mod+Shift+A kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+d exec dmenu_history
 
 # change focus
 bindsym $mod+j focus left
@@ -125,7 +126,8 @@ bindsym XF86AudioRaiseVolume exec amixer set Master playback 5+
 bindsym XF86AudioMute exec amixer set Master toggle
 
 # slock
-bindsym Pause exec i3-msg workspace 8 && i3lock -i /home/bacardi55/images/akuSokuZan.png -d
+bindsym Pause exec i3lock -i /home/bacardi55/images/akuSokuZan.png -d
+bindsym $mod+Shift+Pause exec i3lock -i /home/bacardi55/images/akuSokuZan.png -d && sudo /usr/sbin/pm-suspend
 
 # alt tab old school style
 bindsym Mod1+Tab focus right
@@ -222,6 +224,21 @@ bar {
   status_command i3status
   mode dock
   position top
+  output LVDS
+
+  colors {
+    background #000000
+    statusline #FFFFFF
+    urgent_workspace #FFFFFF #FF0000
+  }
+}
+
+bar {
+  status_command i3status
+  mode dock
+  position top
+  output VGA-0
+  tray_output none
 
   colors {
     background #000000
