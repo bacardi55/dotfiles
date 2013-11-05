@@ -20,5 +20,5 @@ redshift -l 48.8566667:2.3509871 &
 
 #sh ~/.config/wmfs/status.sh &
 #exec ck-launch-session gnome
-exec ck-launch-session i3
+exec ck-launch-session dbus-launch i3
 #exec ck-launch-session wmfs

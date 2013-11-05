@@ -78,35 +78,35 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'brookhong/DBGPavim'
-Bundle 'docteurklein/vim-symfony'
+"Bundle 'brookhong/DBGPavim'
+"Bundle 'docteurklein/vim-symfony'
 Bundle 'arnaud-lb/vim-php-namespace'
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle "vim-scripts/autoload_cscope.vim"
+"Bundle "vim-scripts/autoload_cscope.vim"
 Bundle "vim-scripts/taglist.vim"
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'hobbestigrou/vimtips-fortune'
+"Bundle 'hobbestigrou/vimtips-fortune'
 Bundle 'vim-scripts/phpfolding.vim'
-Bundle 'tpope/vim-fugitive'
+Bundle 'joonty/vdebug.git'
 
 " snipMate dependencies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "honza/snipmate-snippets"
+"Bundle "garbas/vim-snipmate"
 " snipMate for Drupal :
-Bundle 'theunraveler/Drupal-Snippets-for-Vim'
+"Bundle 'theunraveler/Drupal-Snippets-for-Vim'
 
 Bundle 'Gundo'
 " vim-scripts repos
-Bundle 'ManPageView'
+"Bundle 'ManPageView'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
 filetype plugin indent on " required!
@@ -251,66 +251,11 @@ elseif has("cmdline_info")
 endif
 
 
-""" """"""" """
-""" MAPPING """
-""" """"""" """
-" Tabs
-map ,t :tabnew<cr>
-map ,w :tabclose<cr>
-imap <C-t> <Esc><C-t>
-imap <C-w> <Esc><C-w>
-map <tab> gt
-map <S-tab> gT
-
-" Pour insérer un saut de ligne en mode normal :
-map <S-r> i<CR><ESC>
-
-" Gundo
-nnoremap <F4> :GundoToggle<CR>
-
-" Ferme une parenthese, et se place entre les deux, a mettre dans le .vimrc
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap [ []<left>
-inoremap '' ''<left>
-inoremap "" ""<left>
-inoremap , ,
-
-"php
-inoremap <? <?php<space><space>?><left><left><left>
-inoremap ³ =>
-inoremap ² ->
-
-" Remove trailing space
-autocmd BufWritePre * :%s/\s\+$//e
-
-" La list des méthodes/variables
-nnoremap <F3> :TlistToggle<CR>
-" Je préfère la placer à droite
-let Tlist_Use_Right_Window = 1
-
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
-
-" plugin symfony pour vim
-"silent map <F10> :SfSwitchView <CR>
-
-" Quick jumping between splits
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
-map <C-H> <C-W>h
-
-" PHP folds
-map <F11> <Esc>:EnableFastPHPFolds<Cr>
-"map <S-F6> <Esc>:EnablePHPFolds<Cr>
-map <F12> <Esc>:DisablePHPFolds<Cr>
-
 " Xdebug
-let g:dbgPavimKeyRun = '<F5>'
-let g:dbgPavimKeyQuit = '<F6>'
-let g:dbgPavimPort = 9000
-map <F5> <Esc>:python dbgPavim.run()<Cr>
+"let g:dbgPavimKeyRun = '<F5>'
+"let g:dbgPavimKeyQuit = '<F6>'
+"let g:dbgPavimPort = 9000
+"map <F5> <Esc>:python dbgPavim.run()<Cr>
 
 function! RunPhpcs()
     let l:filename=@%
@@ -350,3 +295,61 @@ let FILETAG=expand("./tags")
 if filereadable(FILETAG)
   set tags=tags
 endif
+
+""" """"""" """
+""" MAPPING """
+""" """"""" """
+" Tabs
+map ,t :tabnew<cr>
+map ,w :tabclose<cr>
+imap <C-t> <Esc><C-t>
+map <tab> gt
+map <S-tab> gT
+
+" Pour insérer un saut de ligne en mode normal :
+map <S-r> i<CR><ESC>
+
+" Gundo
+nnoremap <F4> :GundoToggle<CR>
+
+" Ferme une parenthese, et se place entre les deux, a mettre dans le .vimrc
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap '' ''<left>
+inoremap "" ""<left>
+inoremap , ,
+
+"php
+inoremap <? <?php<space>
+inoremap ³ =>
+inoremap ² ->
+
+" Remove trailing space
+autocmd BufWritePre * :%s/\s\+$//e
+
+" La list des méthodes/variables
+nnoremap <F3> :TlistToggle<CR>
+" Je préfère la placer à droite
+let Tlist_Use_Right_Window = 1
+
+map <F2> :NERDTreeToggle<CR>
+
+" Quick jumping between splits
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+" PHP folds
+map <F11> <Esc>:EnableFastPHPFolds<Cr>
+"map <S-F6> <Esc>:EnablePHPFolds<Cr>
+map <F12> <Esc>:DisablePHPFolds<Cr>
+
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
+
+let g:vdebug_options = {
+\ 'path_maps': {"/var/www/capgemini/": "/home/bacardi55/workspace/capgemini/debian55/"},
+\ 'server': '0.0.0.0'
+\}

@@ -1,8 +1,0 @@
-[root]
-       # Command you can execute to set the background.
-        background_command = "nitrogen --restore"
-
-        [mouse] button = "4" func = "tag_next"              [/mouse]
-        [mouse] button = "5" func = "tag_prev"              [/mouse]
-        # [mouse] button = "3" func = "menu" cmd = "rootmenu" [/mouse]
-[/root]

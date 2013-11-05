@@ -2,7 +2,6 @@
   name = Raphael Khaiat
   email = raphael@khaiat.org
 
-
 [alias]
   browse       = !hub browse
   w            = !hub browse
@@ -26,11 +25,17 @@
   s            = status -sb -uno --ignore-submodules=untracked
   st           = status
   sa           = status -sb --ignore-submodules=untracked
+	ci           = commit
+	co           = checkout
+	br           = branch
+	funcdiff     = !sh -c \"git show \\\"\\$1:\\$3\\\" | sed -n \\\"/^[^ \\t].*\\$4(/,/^}/p\\\" > .tmp1 && git show \\\"\\$2:\\$3\\\" | sed -n \\\"/^[^ \\t].*\\$4(/,/^}/p\\\" > .tmp2 && git diff --no-index .tmp1 .tmp2\"
+  cp           = cherry-pick
 
 [core]
   filemode = true
   logallrefupdates = true
   whitespace = space-before-tab, trailing-space
+	excludesfile = ~/.gitignore
 
 [help]
   browser = open
@@ -49,7 +54,7 @@
   smtpserver = smtp.gmail.com
   smtpserverport = 587
   smtpencryption = tls
-  smtpuser = rtomayko@gmail.com
+  smtpuser = bacardi55@gmail.com
 
 [color]
   ui = auto
