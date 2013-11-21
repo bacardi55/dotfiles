@@ -34,7 +34,7 @@ URxvt*inheritPixmap: false
 !URxvt*shading: 1
 
 ! -- Fonts -- !
-URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=12:antialias=true
+URxvt*font: xft:Bitstream Vera Sans Mono:style=Regular:pixelsize=11:antialias=true
 
 
 ! -- Colours -- !
